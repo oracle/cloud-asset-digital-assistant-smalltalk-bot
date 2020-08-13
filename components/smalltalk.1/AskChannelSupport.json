@@ -1,0 +1,30 @@
+{
+    "AskChannelSupport": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Yes, I support Facebook Messenger and all avaiable WebHook Channels.",
+                            "Additionally, I provide support for communication over WebSocket channels."
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "BasExperience",
+                    "$$$gotoAnwerOnChannelSupport": "AnwerOnChannelSupport"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "Aha I see the experience was not so bad!:)"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

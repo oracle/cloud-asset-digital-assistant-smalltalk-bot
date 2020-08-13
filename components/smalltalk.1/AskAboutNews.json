@@ -1,0 +1,46 @@
+{
+  "AskAboutNews": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "{{$$textChunk.apologyMedium}}, I’m just a dedicated bot program. They don’t let me out much."
+            ]
+          },
+          {
+            "text": [
+              "{{$$textChunk.apologyMedium}}, they keep me focused around here. I haven’t looked at the news lately."
+            ]
+          },
+          {
+            "text": [
+              "{{$$textChunk.apologyMedium}}, I’ve been so busy that I haven’t had a chance to look at the news."
+            ]
+          }
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "{{$$textChunk.apologyHard}}, I understand your greeting intention but my creator didn't teach me how to answer."
+              ]
+            },
+            {
+              "text": [
+                "{{$$textChunk.apologyHard}}, I understand your greeting intention but I have no answer. Can you please try to ask the question again?"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

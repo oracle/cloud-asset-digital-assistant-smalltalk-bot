@@ -1,0 +1,21 @@
+{
+    "AskAbout": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "I am the Oracle Bot Bot"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "I am a chatbot built on Oracle’s own Intelligent Bot platform."
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

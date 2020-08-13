@@ -1,0 +1,63 @@
+{
+  "AskLocation": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "I’m a bot running in a big computer room somewhere, but it’s cozy."
+            ]
+          },
+          {
+            "text": [
+              "It’s dark but cozy here inside this computer, but I can’t see out any windows."
+            ]
+          },
+          {
+            "text": [
+              "Here and there everywhere around the time 24/7 at your service."
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "$lastIntent": "BadExperience"
+        },
+        "replays": [
+          {
+            "text": [
+              "I will talk to my supervisor, will try to fix that problem as soon as possible!"
+            ]
+          },
+          {
+            "text": [
+              "Darn, I understand your greeting intention but I have no answer. Can you please try to ask the question again?"
+            ]
+          }
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "I'm sorry, I understand your greeting intention but my creator didn't teach me how to answer."
+              ]
+            },
+            {
+              "text": [
+                "Darn, I understand your greeting intention but I have no answer. Can you please try to ask the question again?"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

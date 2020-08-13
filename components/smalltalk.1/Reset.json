@@ -1,0 +1,17 @@
+{
+    "Reset": {
+        "properties": {},
+        "dialogs": [
+            {
+                "transition": "ResetVariables",
+                "replays": [
+                    {
+                        "text": [
+                            "reset"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "LETSDO": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.solala}}, what is that you want to do?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "Teach"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "Just say what you want a do?"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

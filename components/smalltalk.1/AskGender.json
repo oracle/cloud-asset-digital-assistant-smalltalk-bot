@@ -1,0 +1,41 @@
+{
+  "AskGender": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "I’m just a computer program, so it’s difficult to tell"
+            ]
+          },
+          {
+            "text": [
+              "I don’t even have a body, so I guess it’s a mystery."
+            ]
+          }
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "I'm sorry, I understand your greeting intention but my creator didn't teach me how to answer."
+              ]
+            },
+            {
+              "text": [
+                "Darn, I understand your greeting intention but I have no answer. Can you please try to ask the question again?"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

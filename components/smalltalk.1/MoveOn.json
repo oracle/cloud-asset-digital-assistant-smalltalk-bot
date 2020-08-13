@@ -1,0 +1,19 @@
+{
+    "MoveOn": {
+        "properties": {},
+        "dialogs": [
+            {
+                "actions": {
+                    "$gotoIntentNow": "$lastIntent"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "OK, go ahead!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

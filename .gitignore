@@ -1,0 +1,12 @@
+.idea
+node_modules
+coverage
+dists
+pls
+dist
+.nyc_output
+*.tgz
+service-*
+package/
+build
+builds

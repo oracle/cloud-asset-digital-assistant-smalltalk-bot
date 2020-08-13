@@ -1,0 +1,36 @@
+{
+    "AskConfidence": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "100%"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Absolutely."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Couldn't be more sure than that!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "My bits don't allow me to lie."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "100% sure"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

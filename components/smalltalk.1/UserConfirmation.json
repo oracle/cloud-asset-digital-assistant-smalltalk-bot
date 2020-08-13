@@ -1,0 +1,38 @@
+{
+    "UserConfirmation": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Very good."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Glad to hear that."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Great! Let me know how can I help."
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "BasExperience"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "maybe we can try something else?"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

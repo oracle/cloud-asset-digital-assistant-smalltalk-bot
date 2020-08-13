@@ -1,0 +1,181 @@
+{
+    "BadExperience": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Sorry to hear that!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Sorry to hear I reall try my best!"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "BasExperience",
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "yes, I really do!"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "BasExperience",
+                    "YES_NO": "NO"
+                },
+                "actions": {
+                    "$$$badExperienceYesOnAnswer1": "badExperienceYesOnAnswer1"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "believe me I do and I am sorry that your experience is not satisfying, let me know what else I could do for you?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "BasExperience",
+                    "$$$badExperienceYesOnAnswer1": "badExperienceYesOnAnswer1",
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "ok, go ahead, ask your question hopefully in the way I can understand I will try my best to provide you some guidance:)"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskSkills"
+                },
+                "actions": {
+                    "$$$gotoBadExperienceAnswerOnSkills": "AnwerOnBadSkills"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "I am sorry {{profileName}} my skills don't satisfy you, but I am very flexible you can teach me new stuff, do you want to know more?"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "I am sorry my skills don't satisfy you, let me know how else I can help you?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "BasExperience",
+                    "$$$gotoBadExperienceAnswerOnSkills": "AnwerOnBadSkills"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "do you want me to connect you with someone?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "BasExperience",
+                    "$$$gotoBadExperienceAnswerOnSkills": "AnwerOnBadSkills",
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "glad to hear, go to www.oracle.com for more information!"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "BasExperience",
+                    "$$$gotoBadExperienceAnswerOnSkills": "AnwerOnBadSkills",
+                    "YES_NO": "NO"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "well ok sorry to hear again and let me know if anithing else"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskChannelSupport"
+                },
+                "actions": {
+                    "$$$gotoAnwerOnChannelSupport": "AnwerOnChannelSupport"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "Well, through WebHooks you can exted me to support whatever you like!",
+                            "Would you like to learn more about it?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "BasExperience",
+                    "$$$gotoAnwerOnChannelSupport": "AnwerOnChannelSupport",
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveGreetingAnswer}}, go to www.oracle.com for more informations!"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "BasExperience",
+                    "$$$gotoAnwerOnChannelSupport": "AnwerOnChannelSupport",
+                    "YES_NO": "NO"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "sorry to hear, but if you want to know more go to www.oracle.com!"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "PlayMusic"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "I am sorry but I am not hear to be a Spotify replacement, go ahead and ask me something else!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

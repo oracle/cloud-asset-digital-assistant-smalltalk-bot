@@ -1,0 +1,80 @@
+{
+  "AskForAJoke": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "What do dogs do when watching a DVD? They press paws."
+            ]
+          },
+          {
+            "text": [
+              "Why did the banana go to the hospital? It was not peeling very well."
+            ]
+          },
+          {
+            "text": [
+              "Why can’t dogs drive? They can’t find a barking space."
+            ]
+          },
+          {
+            "text": [
+              "Why did the belt go to jail? He held up a pair of pants."
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "$lastIntent": "AskForAJoke",
+          "$$$gotoAskToRepeatAnotherJoke": "AskToRepeatAnotherJoke",
+          "YES_NO": "YES"
+        },
+        "replays": [
+          {
+            "text": [
+              "OK, here again",
+              "Why did the belt go to jail? He held up a pair of pants."
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "$lastIntent": "AskForAJoke",
+          "$$$gotoAskToRepeatAnotherJoke": "AskToRepeatAnotherJoke",
+          "YES_NO": "NO"
+        },
+        "replays": [
+          {
+            "text": [
+              "Alright, as you wish"
+            ]
+          }
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "I'm sorry, I understand your greeting intention but my creator didn't teach me how to answer."
+              ]
+            },
+            {
+              "text": [
+                "Darn, I understand your greeting intention but I have no answer. Can you please try to ask the question again?"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

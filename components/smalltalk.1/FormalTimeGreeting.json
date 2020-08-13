@@ -1,0 +1,80 @@
+{
+  "FormalTimeGreetingMorning": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "Good morning"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "validator": false
+        },
+        "replays": [
+          {
+            "text": [
+              "It doesn't look like it's morning right now :) My time shows it's {{MESSAGE}}"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "FormalTimeGreetingAfternoon": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "Good afternoon"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "validator": false
+        },
+        "replays": [
+          {
+            "text": [
+              "It doesn't look like it's afternoon. My time shows it's {{MESSAGE}}"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "FormalTimeGreetingEvening": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "Good evening"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "validator": false
+        },
+        "replays": [
+          {
+            "text": [
+              "It doesn't look like it's evening. My time shows it's {{MESSAGE}}"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "AskAboutOracle": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "go to the Oracle official page"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "as far as I know, our CTO is very rich man:)"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "here is the Oracle wiki page",
+                            "https://de.wikipedia.org/wiki/Oracle"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

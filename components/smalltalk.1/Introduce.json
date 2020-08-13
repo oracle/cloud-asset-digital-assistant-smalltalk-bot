@@ -1,0 +1,21 @@
+{
+    "Introduce": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "I am Candice - your cloud native developer assistent"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "I am a Oracle developed chatbot and happy to assist"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

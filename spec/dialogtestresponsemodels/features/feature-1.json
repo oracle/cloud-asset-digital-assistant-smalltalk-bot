@@ -1,0 +1,135 @@
+{
+  "stopWords": {
+    "dialogs": [
+      {
+        "replays": [
+          "then",
+          "that",
+          "who",
+          "when",
+          "and"
+        ]
+      }
+    ]
+  },
+  "onpositivegreetinganswer": {
+    "dialogs": [
+      {
+        "replays": [
+          "great",
+          "nice",
+          "good to hear",
+          "happy to hear that"
+        ]
+      }
+    ]
+  },
+  "greeting": {
+    "dialogs": [
+      {
+        "replays": [
+          "aha",
+          "ahoy",
+          "all righty",
+          "hi",
+          "hey there",
+          "whats'up",
+          "cheers"
+        ]
+      }
+    ]
+  },
+  "buy": {
+    "dialogs": [
+      {
+        "replays": [
+          "buy",
+          "baa",
+          "au revoir",
+          "see you"
+        ]
+      }
+    ]
+  },
+  "positive": {
+    "dialogs": [
+      {
+        "replays": [
+          "oha",
+          "nice",
+          "great",
+          "amazing",
+          "you did great",
+          "Whohoo",
+          "keep it up",
+          "bravo",
+          "good grief",
+          "hip hip hooray",
+          "kaboom",
+          "mamma mia",
+          "wha wha",
+          "well done",
+          "well well",
+          "wow",
+          "yoo hoo",
+          "yowza"
+        ]
+      }
+    ]
+  },
+  "negative": {
+    "dialogs": [
+      {
+        "replays": [
+          "duh",
+          "oh no",
+          "wah wha",
+          "whoops a daisy",
+          "yikes"
+        ]
+      }
+    ]
+  },
+  "neutral": {
+    "dialogs": [
+      {
+        "replays": [
+          "cheer up",
+          "gotcha",
+          "heads-up",
+          "so",
+          "ta da",
+          "voila",
+          "here you go",
+          "ok"
+        ]
+      }
+    ]
+  },
+  "repeating": {
+    "dialogs": [
+      {
+        "replays": [
+          "as I already shown it to you",
+          "you asked me that already but",
+          "ok here again",
+          "not really funny to answer the same question again"
+        ]
+      }
+    ]
+  },
+  "re-repeating": {
+    "dialogs": [
+      {
+        "replays": [
+          "ok, here you go again",
+          "you did just ask me that already",
+          "ok again",
+          "here it go again",
+          "I am just a machine, my capabilities are limited but I think you asked me that already:)",
+          "we can do this all day long"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "DateSpecificGreetings": {
+    "properties": {},
+    "dialogs": [
+      {
+        "properties": {},
+        "replays": [
+          {
+            "text": [
+              "Thank you – you too!"
+            ]
+          },
+          {
+            "text": [
+              "...and to you too!"
+            ]
+          },
+          {
+            "text": [
+              "And to you as well!"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "validator": false
+        },
+        "replays": [
+          {
+            "text": [
+              "doesn't look like is {{ENTITY}} right now:), my time shows it's {{MESSAGE}}"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

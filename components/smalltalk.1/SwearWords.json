@@ -1,0 +1,22 @@
+{
+  "SwearWords": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "I see that you’re frustrated. Let’s try again with different question."
+            ]
+          },
+          {
+            "text": [
+              "I’m sorry that this is a frustrating experience for you.",
+              "I promise to get better soon!"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

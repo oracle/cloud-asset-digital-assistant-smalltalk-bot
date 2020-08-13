@@ -1,0 +1,44 @@
+{
+    "PlayMusic": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "No"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Use spotify:)"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "I use spotify, no jokes!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Btw I can play some guitar, but I am not that good"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "PlayMusic",
+                    "YES_NO": "NO"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "because I can't, but you could try with spotify for example:)"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

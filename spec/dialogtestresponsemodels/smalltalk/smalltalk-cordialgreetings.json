@@ -1,0 +1,21 @@
+{
+  "CordialGreetings": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "It’s nice to meet you too"
+            ]
+          },
+          {
+            "text": [
+              "The pleasure is all mine"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

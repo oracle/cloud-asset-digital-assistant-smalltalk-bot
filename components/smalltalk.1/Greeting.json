@@ -1,0 +1,68 @@
+{
+  "Greeting": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "Hi there!"
+            ]
+          },
+          {
+            "text": [
+              "Hi"
+            ]
+          },
+          {
+            "text": [
+              "Hello"
+            ]
+          },
+          {
+            "text": [
+              "Hi, how are you?"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "$isRepeating": true
+        },
+        "replays": [
+          {
+            "text": [
+              "{{$$textChunk.repeatHello}}, what can I do for you?"
+            ]
+          },
+          {
+            "text": [
+              "{{$$textChunk.repeatHello}}, ask me something:)"
+            ]
+          }
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "I'm sorry. I understand your greeting intention but my creators didn't teach me how to answer."
+              ]
+            },
+            {
+              "text": [
+                "Darn, I understand your greeting intention but have no answer. Will you please try to ask the question again?"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

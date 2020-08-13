@@ -1,0 +1,46 @@
+{
+  "AskAboutTheWeather": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "I’m just a bot program and they keep me in this computer room all day. Sorry."
+            ]
+          },
+          {
+            "text": [
+              "It’s nice and cool in my computer server room, but there are no windows to see outside. Sorry."
+            ]
+          },
+          {
+            "text": [
+              "It is definitely raining somewhere in the world right now. Also, it is hot and cold in various cities. Sorry I can’t be more helpful here."
+            ]
+          }
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "I'm sorry, I understand your question but my creators didn't teach me how to answer."
+              ]
+            },
+            {
+              "text": [
+                "Darn, I understand your intention but have no answer. Will you please try to ask the question again?"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

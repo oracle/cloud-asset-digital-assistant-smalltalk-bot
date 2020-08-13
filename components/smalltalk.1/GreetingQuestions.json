@@ -1,0 +1,117 @@
+{
+  "GreetingQuestions": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "Thanks I'm fine. What a great day!"
+            ]
+          },
+          {
+            "text": [
+              "Looks like a good day ahead."
+            ]
+          },
+          {
+            "text": [
+              "I’m feeling helpful today :)"
+            ]
+          }
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "ich habe dich schon verstanden aber ich spreche kein English!"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "GreetingQuestions-de": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "Danke gut und selbst?"
+            ]
+          },
+          {
+            "text": [
+              "Sehr gut vielen Dank, und bei Dir?"
+            ]
+          }
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "ich habe dich schon verstanden aber ich spreche kein English!"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "GreetingQuestionsAnswersPositive": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "{{$$textChunk.onPositiveGreetingAnswer}}, please let me know how can I help you."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "GreetingQuestionsAnswersNegative": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "I'm sorry to hear that. Please let me know how can I help you!"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "GreetingQuestionsAnswersNeutral": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "{{$$textChunk.neutral}}, please let me know how can I help you."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

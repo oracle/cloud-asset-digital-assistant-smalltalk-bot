@@ -1,0 +1,221 @@
+{
+  "stopWords": {
+    "dialogs": [
+      {
+        "replays": [
+          "then",
+          "that",
+          "who",
+          "when",
+          "and"
+        ]
+      }
+    ]
+  },
+  "solala": {
+    "dialogs": [
+      {
+        "replays": [
+          "well",
+          "hmm",
+          "yeah",
+          "so"
+        ]
+      }
+    ]
+  },
+  "greeting": {
+    "dialogs": [
+      {
+        "replays": [
+          "Ahoy",
+          "Hello",
+          "Hi",
+          "Hey there",
+          "Cheers"
+        ]
+      }
+    ]
+  },
+  "apologyMedium": {
+    "dialogs": [
+      {
+        "replays": [
+          "I'm sorry",
+          "Excuse me",
+          "I beg your pardon"
+        ]
+      }
+    ]
+  },
+  "apologyHard": {
+    "dialogs": [
+      {
+        "replays": [
+          "I'm very sorry",
+          "Darn"
+        ]
+      }
+    ]
+  },
+  "buy": {
+    "dialogs": [
+      {
+        "replays": [
+          "Bye",
+          "Adios",
+          "Au revoir",
+          "See you"
+        ]
+      }
+    ]
+  },
+  "onPositiveGreetingAnswer": {
+    "dialogs": [
+      {
+        "replays": [
+          "Great",
+          "Nice",
+          "Good to hear",
+          "I am happy to hear that"
+        ]
+      }
+    ]
+  },
+  "onPositiveButNeutral": {
+    "dialogs": [
+      {
+        "replays": [
+          "Great",
+          "Nice",
+          "OK",
+          "Super",
+          "Alright"
+        ]
+      }
+    ]
+  },
+  "onPositiveGreetingAnswer-de": {
+    "dialogs": [
+      {
+        "replays": [
+          "Super",
+          "Bravo",
+          "Sehr gut",
+          "Ich freue mich"
+        ]
+      }
+    ]
+  },
+  "positive": {
+    "dialogs": [
+      {
+        "replays": [
+          "Nice",
+          "Great",
+          "Amazing",
+          "You did great",
+          "Woo hoo",
+          "Keep it up",
+          "Bravo",
+          "Hip hip hooray!",
+          "Kaboom",
+          "Well done",
+          "Wow",
+          "Yowza"
+        ]
+      }
+    ]
+  },
+  "negative": {
+    "dialogs": [
+      {
+        "replays": [
+          "Dang",
+          "Oh no",
+          "Whoopsie daisy",
+          "Yikes"
+        ]
+      }
+    ]
+  },
+  "neutral": {
+    "dialogs": [
+      {
+        "replays": [
+          "Gotcha",
+          "Alright",
+          "Sure",
+          "No problem",
+          "Ok"
+        ]
+      }
+    ]
+  },
+  "repeatHello": {
+    "dialogs": [
+      {
+        "replays": [
+          "Hello again",
+          "Hi there again",
+          "Hi-hi",
+          "Hi again"
+        ]
+      }
+    ]
+  },
+  "repeating": {
+    "dialogs": [
+      {
+        "replays": [
+          "I think I already respond to that...",
+          "ok, here you go again"
+        ]
+      }
+    ]
+  },
+  "repeating-de": {
+    "dialogs": [
+      {
+        "replays": [
+          "Ich habe das schon geantwortet!"
+        ]
+      }
+    ]
+  },
+  "rerepeating": {
+    "dialogs": [
+      {
+        "replays": [
+          "Its not fun to repeat the same again and again!",
+          "Well I answer that already!",
+          "I responded to that already!"
+        ]
+      }
+    ]
+  },
+  "rerepeating-de": {
+    "dialogs": [
+      {
+        "replays": [
+          "Also es macht echt kein Spass immer wieder das gleiche zu beantworten!"
+        ]
+      }
+    ]
+  },
+  "overrepeating": {
+    "dialogs": [
+      {
+        "replays": [
+          "We can do this all day long.",
+          "How about changing context :)",
+          "I am just a machine, my capabilities are limited but I think you asked me that already too often :)",
+          "Well, I can do this all day long you know.",
+          "Maybe its time to switch context. What do you think? Its not funny to ask me stuff I dont understand!",
+          "Here it go again, let's change context",
+          "You could try ask me something else too:)"
+        ]
+      }
+    ]
+  }
+}

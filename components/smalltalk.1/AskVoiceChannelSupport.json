@@ -1,0 +1,21 @@
+{
+    "AskVoiceChannelSupport": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Yes. I leverage their natural language processing, but the answers are mine!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Yes I do"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

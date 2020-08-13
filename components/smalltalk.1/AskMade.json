@@ -1,0 +1,33 @@
+{
+    "AskMade": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Oracle made me what I am today."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "I was developed by Oracle, but you can expand my capabilities with your own information. Would you like to learn more?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.neutral}}, please visit https://www.oracle.com/de/solutions/mobile/bots.html"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

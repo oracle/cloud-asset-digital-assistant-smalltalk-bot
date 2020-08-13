@@ -1,0 +1,26 @@
+{
+  "$$$unresolved": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "Darn. My understanding is limited and I don’t know how to reply to that."
+            ]
+          },
+          {
+            "text": [
+              "Oops. I can’t figure out how to respond to what you just said."
+            ]
+          },
+          {
+            "text": [
+              "Hmmmm, unfortunately, I wasn’t programmed to understand that. Sorry."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

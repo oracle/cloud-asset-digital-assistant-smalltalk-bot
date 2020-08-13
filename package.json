@@ -1,0 +1,32 @@
+{
+  "name": "smartdialog-component-pkg",
+  "version": "4.0.3",
+  "description": "SmallTalk Component!",
+  "main": "main.js",
+  "author": "Lyudmil Pelov, Oracle A-Team",
+  "license": "UPL-1.0",
+  "scripts": {
+    "bots-node-sdk": "bots-node-sdk",
+    "start": "npm run bots-node-sdk -- service .",
+    "startwatch": "nodemon $(npm bin)/bots-node-sdk service .",
+    "prepack": "npm run bots-node-sdk -- pack --dry-run ."
+  },
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "log4js": "^3.0.6",
+    "moment": "^2.24.0",
+    "mustache": "^2.3.2",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "@oracle/bots-node-sdk": "^2.2.2",
+    "express": "^4.16.3"
+  },
+  "bundledDependencies": [
+    "lodash",
+    "log4js",
+    "moment",
+    "mustache",
+    "express"
+  ]
+}

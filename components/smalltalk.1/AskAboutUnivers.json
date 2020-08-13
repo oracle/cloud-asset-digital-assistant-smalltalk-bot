@@ -1,0 +1,40 @@
+{
+    "AskAboutUniversAnswer": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "42 of course!",
+                            "Would you like to follow up with a sales rep?"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Forty-two (42) of course is a pronic number[1] and an abundant number; its prime factorization 2 · 3 · 7 makes it the second sphenic number and also the second of the form (2 · 3 · r).",
+                            "Would you like to follow up w/ith a sales rep?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveGreetingAnswer}}, please visit https://www.oracle.com/de/solutions/mobile/bots.html and ask for more information!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveGreetingAnswer}}, please contact your Oracle Sales Representetive or visit https://www.oracle.com/de/solutions/mobile/bots.html!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

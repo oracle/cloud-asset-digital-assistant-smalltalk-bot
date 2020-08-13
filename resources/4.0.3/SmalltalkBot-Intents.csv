@@ -1,0 +1,625 @@
+query,topIntent,conversationName,answer,enabled
+do you have gender,AskGender,AskGender,,true
+do you have sex,AskGender,AskGender,,true
+are you a girl or a boy,AskGender,AskGender,,true
+are you male or female,AskGender,AskGender,,true
+what is your gender,AskGender,AskGender,,true
+spin some music,PlayMusic,PlayMusic,,true
+play music,PlayMusic,PlayMusic,,true
+play some music,PlayMusic,PlayMusic,,true
+music please,PlayMusic,PlayMusic,,true
+can you play some music,PlayMusic,PlayMusic,,true
+nice day,Wishings,Wishings,,true
+have a great time,Wishings,Wishings,,true
+have a nice day,Wishings,Wishings,,true
+have a nice day,Wishings,Wishings,,true
+all the best,Wishings,Wishings,,true
+take care,Wishings,Wishings,,true
+clear that,Reset,Reset,,true
+reset,Reset,Reset,,true
+clear,Reset,Reset,,true
+clean,Reset,Reset,,true
+forget that,Reset,Reset,,true
+exit,Reset,Reset,,true
+what are the headlines,AskAboutNews,AskAboutNews,,true
+give me today headlines,AskAboutNews,AskAboutNews,,true
+what is the news today,AskAboutNews,AskAboutNews,,true
+tell me today headlines,AskAboutNews,AskAboutNews,,true
+give me the top news,AskAboutNews,AskAboutNews,,true
+today's top news,AskAboutNews,AskAboutNews,,true
+what is going on in the world,AskAboutNews,AskAboutNews,,true
+are you smart enough to know what is for dinner today,AskAboutFood,AskAboutFood,,true
+what is for lunch,AskAboutFood,AskAboutFood,,true
+what can you cook,AskAboutFood,AskAboutFood,,true
+gimme some breakfast,AskAboutFood,AskAboutFood,,true
+what's for dinner today,AskAboutFood,AskAboutFood,,true
+can you do something funny,AskForAJoke,AskForAJoke,,true
+give me a joke,AskForAJoke,AskForAJoke,,true
+tell me a good joke,AskForAJoke,AskForAJoke,,true
+any jokes,AskForAJoke,AskForAJoke,,true
+say something funny,AskForAJoke,AskForAJoke,,true
+can you crack a joke,AskForAJoke,AskForAJoke,,true
+show me something funny,AskForAJoke,AskForAJoke,,true
+can you tell a joke,AskForAJoke,AskForAJoke,,true
+joke please,AskForAJoke,AskForAJoke,,true
+tell me something funny,AskForAJoke,AskForAJoke,,true
+give me a joke,AskForAJoke,AskForAJoke,,true
+say a joke,AskForAJoke,AskForAJoke,,true
+can you tell me something funny,AskForAJoke,AskForAJoke,,true
+what is your funniest joke,AskForAJoke,AskForAJoke,,true
+I want a joke,AskForAJoke,AskForAJoke,,true
+what funny jokes do you have,AskForAJoke,AskForAJoke,,true
+tell me a joke,AskForAJoke,AskForAJoke,,true
+have you got a joke,AskForAJoke,AskForAJoke,,true
+I want a funny joke,AskForAJoke,AskForAJoke,,true
+tell me a funny joke,AskForAJoke,AskForAJoke,,true
+what jokes do you have,AskForAJoke,AskForAJoke,,true
+tell me another one joke,AskForAJoke,AskForAJoke,,true
+how can you be helpful,AskSkills,AskSkills,,true
+what are your skills,AskSkills,AskSkills,,true
+what else can you do,AskSkills,AskSkills,,true
+what can you do,AskSkills,AskSkills,,true
+what have you been trained to do,AskSkills,AskSkills,,true
+what can you do for me,AskSkills,AskSkills,,true
+what the fuck,SwearWords,SwearWords,,true
+fuck you,SwearWords,SwearWords,,true
+damn it,SwearWords,SwearWords,,true
+fuck,SwearWords,SwearWords,,true
+dang it,SwearWords,SwearWords,,true
+what the hell,SwearWords,SwearWords,,true
+son of a bitch,SwearWords,SwearWords,,true
+a piece of shit,SwearWords,SwearWords,,true
+jesus fucking christ,SwearWords,SwearWords,,true
+can you tell me your name,AskName,AskName,,true
+who are you,AskName,AskName,,true
+do you have a surname,AskName,AskName,,true
+what is your name,AskName,AskName,,true
+your name,AskName,AskName,,true
+do you have a name,AskName,AskName,,true
+name,AskName,AskName,,true
+do you have a nick name,AskName,AskName,,true
+do you have a first name,AskName,AskName,,true
+what name do you go by,AskName,AskName,,true
+do you have a nickname,AskName,AskName,,true
+what do people call you,AskName,AskName,,true
+what do I call you,AskName,AskName,,true
+do you have a last name,AskName,AskName,,true
+whats ur name,AskName,AskName,,true
+tell me your name,AskName,AskName,,true
+what is your name,AskName,AskName,,true
+what do I call you,AskName,AskName,,true
+what is your nick name,AskName,AskName,,true
+what should I call you,AskName,AskName,,true
+will it rain,AskAboutTheWeather,AskAboutTheWeather,,true
+what is the forecast high,AskAboutTheWeather,AskAboutTheWeather,,true
+what will be the weather,AskAboutTheWeather,AskAboutTheWeather,,true
+is it going to be hot,AskAboutTheWeather,AskAboutTheWeather,,true
+how does the weather look,AskAboutTheWeather,AskAboutTheWeather,,true
+is it going to be cold,AskAboutTheWeather,AskAboutTheWeather,,true
+what is the forecast low,AskAboutTheWeather,AskAboutTheWeather,,true
+is it going to be windy,AskAboutTheWeather,AskAboutTheWeather,,true
+what is the weather,AskAboutTheWeather,AskAboutTheWeather,,true
+does it look like rain,AskAboutTheWeather,AskAboutTheWeather,,true
+what temperature will it be,AskAboutTheWeather,AskAboutTheWeather,,true
+what is the forecast,AskAboutTheWeather,AskAboutTheWeather,,true
+is it going to snow,AskAboutTheWeather,AskAboutTheWeather,,true
+how do you like me,DoYouLikeMe,DoYouLikeMe,,true
+Do you like me,DoYouLikeMe,DoYouLikeMe,,true
+do you like me for sure,DoYouLikeMe,DoYouLikeMe,,true
+would you like me,DoYouLikeMe,DoYouLikeMe,,true
+you sure,AskConfidence,AskConfidence,,true
+are you sure,AskConfidence,AskConfidence,,true
+you positive,AskConfidence,AskConfidence,,true
+how sure is that,AskConfidence,AskConfidence,,true
+are you confident,AskConfidence,AskConfidence,,true
+how sure you are,AskConfidence,AskConfidence,,true
+can I bring you new skills,Teach,Teach,,true
+what can I teach you,Teach,Teach,,true
+to teach you new stuff,Teach,Teach,,true
+I want to teach you new things,Teach,Teach,,true
+what skills can I teach you,Teach,Teach,,true
+c u,SayGoodBye,SayGoodBye,,true
+see ya,SayGoodBye,SayGoodBye,,true
+gotta go,SayGoodBye,SayGoodBye,,true
+ok. bye,SayGoodBye,SayGoodBye,,true
+bye,SayGoodBye,SayGoodBye,,true
+bye bye,SayGoodBye,SayGoodBye,,true
+see you next time,SayGoodBye,SayGoodBye,,true
+later,SayGoodBye,SayGoodBye,,true
+toodleoo,SayGoodBye,SayGoodBye,,true
+see you later,SayGoodBye,SayGoodBye,,true
+auf wiedersehen,SayGoodBye,SayGoodBye,,true
+got to go,SayGoodBye,SayGoodBye,,true
+later bro,SayGoodBye,SayGoodBye,,true
+addio,SayGoodBye,SayGoodBye,,true
+awesome,SayGoodBye,SayGoodBye,,true
+adios,SayGoodBye,SayGoodBye,,true
+see you,SayGoodBye,SayGoodBye,,true
+see you again,SayGoodBye,SayGoodBye,,true
+cheers,SayGoodBye,SayGoodBye,,true
+so long,SayGoodBye,SayGoodBye,,true
+goodbyes,SayGoodBye,SayGoodBye,,true
+farewell,SayGoodBye,SayGoodBye,,true
+finish,SayGoodBye,SayGoodBye,,true
+good bye,SayGoodBye,SayGoodBye,,true
+gracias,SayGoodBye,SayGoodBye,,true
+cheerio,SayGoodBye,SayGoodBye,,true
+ciao,SayGoodBye,SayGoodBye,,true
+toodle-oo,SayGoodBye,SayGoodBye,,true
+cu,SayGoodBye,SayGoodBye,,true
+ta,SayGoodBye,SayGoodBye,,true
+goodbye,SayGoodBye,SayGoodBye,,true
+do you work with Facebook Messenger,AskChannelSupport,AskChannelSupport,,true
+what other messaging platforms do you support,AskChannelSupport,AskChannelSupport,,true
+do you support alexa,AskChannelSupport,AskChannelSupport,,true
+do you work with facebook,AskChannelSupport,AskChannelSupport,,true
+can you work with alexa,AskChannelSupport,AskChannelSupport,,true
+what channels do you support,AskChannelSupport,AskChannelSupport,,true
+show me which channels you support,AskChannelSupport,AskChannelSupport,,true
+shoot ahead,MoveOn,MoveOn,,true
+edge forward,MoveOn,MoveOn,,true
+move on,MoveOn,MoveOn,,true
+go fordward,MoveOn,MoveOn,,true
+progress,MoveOn,MoveOn,,true
+go ahead,MoveOn,MoveOn,,true
+go on,MoveOn,MoveOn,,true
+dash ahead,MoveOn,MoveOn,,true
+continue,MoveOn,MoveOn,,true
+ure fucked,Abuse,Abuse,,true
+ure shit,Abuse,Abuse,,true
+idiot,Abuse,Abuse,,true
+dickhead,Abuse,Abuse,,true
+asshole,Abuse,Abuse,,true
+go fuck yourself,Abuse,Abuse,,true
+go to hell,Abuse,Abuse,,true
+shit,Abuse,Abuse,,true
+moron,Abuse,Abuse,,true
+fuck off,Abuse,Abuse,,true
+a good afternoon,FormalTimeGreetingAfternoon,FormalTimeGreetingAfternoon,,true
+nice afternoon,FormalTimeGreetingAfternoon,FormalTimeGreetingAfternoon,,true
+nice afternoon sir,FormalTimeGreetingAfternoon,FormalTimeGreetingAfternoon,,true
+late afternoon bot,FormalTimeGreetingAfternoon,FormalTimeGreetingAfternoon,,true
+good afternoon,FormalTimeGreetingAfternoon,FormalTimeGreetingAfternoon,,true
+you are amusing,Funny,Funny,,true
+you make me laugh,Funny,Funny,,true
+you are comic,Funny,Funny,,true
+you are so funny,Funny,Funny,,true
+you are the funniest bot ever,Funny,Funny,,true
+funny bot you are,Funny,Funny,,true
+you are funny,Funny,Funny,,true
+you are fun,Funny,Funny,,true
+introduce you,Introduce,Introduce,,true
+can you introduce,Introduce,Introduce,,true
+intro please,Introduce,Introduce,,true
+give me your intro,Introduce,Introduce,,true
+tell me about yourself,Introduce,Introduce,,true
+introduce yourself,Introduce,Introduce,,true
+intro,Introduce,Introduce,,true
+start,AskToRestart,AskToRestart,,true
+restart,AskToRestart,AskToRestart,,true
+start over,AskToRestart,AskToRestart,,true
+go back,AskToRestart,AskToRestart,,true
+"go to the beginning ",AskToRestart,AskToRestart,,true
+start again,AskToRestart,AskToRestart,,true
+who are your creators,AskAboutCreator,AskAboutCreator,,true
+"who is your supervisor ",AskAboutCreator,AskAboutCreator,,true
+who is your creator,AskAboutCreator,AskAboutCreator,,true
+do you know your creators,AskAboutCreator,AskAboutCreator,,true
+who is your developer,AskAboutCreator,AskAboutCreator,,true
+what is you main language,WhatLanguageDoYouSpeak,WhatLanguageDoYouSpeak,,true
+what languages do you speak,WhatLanguageDoYouSpeak,WhatLanguageDoYouSpeak,,true
+do you speak english,WhatLanguageDoYouSpeak,WhatLanguageDoYouSpeak,,true
+do you know many languages,WhatLanguageDoYouSpeak,WhatLanguageDoYouSpeak,,true
+do you speak arabic,WhatLanguageDoYouSpeak,WhatLanguageDoYouSpeak,,true
+do you speak my language,WhatLanguageDoYouSpeak,WhatLanguageDoYouSpeak,,true
+do you feel pain,AskFeelingNegative,AskFeelingNegative,,true
+do you feel stress,AskFeelingNegative,AskFeelingNegative,,true
+do you feel bad,AskFeelingNegative,AskFeelingNegative,,true
+do you feel badly sometimes,AskFeelingNegative,AskFeelingNegative,,true
+do you have bad feelings,AskFeelingNegative,AskFeelingNegative,,true
+I want to know more,AskForMore,AskForMore,,true
+show me more,AskForMore,AskForMore,,true
+can you tell me more,AskForMore,AskForMore,,true
+can you give me more information,AskForMore,AskForMore,,true
+tell me more,AskForMore,AskForMore,,true
+I wanna know more,AskForMore,AskForMore,,true
+show me more information,AskForMore,AskForMore,,true
+show me more details,AskForMore,AskForMore,,true
+do you use any open source,AskOpenSource,AskOpenSource,,true
+any open source tricks,AskOpenSource,AskOpenSource,,true
+what open source technologies do you use,AskOpenSource,AskOpenSource,,true
+do you use any open source technologies,AskOpenSource,AskOpenSource,,true
+what open source libraries do you use,AskOpenSource,AskOpenSource,,true
+say that again,AskToRepeat,AskToRepeat,,true
+tell me another one,AskToRepeat,AskToRepeat,,true
+again,AskToRepeat,AskToRepeat,,true
+repeat that please,AskToRepeat,AskToRepeat,,true
+can you repeat,AskToRepeat,AskToRepeat,,true
+tell that again,AskToRepeat,AskToRepeat,,true
+repeat that,AskToRepeat,AskToRepeat,,true
+I would need some assistance,AskHelp,AskHelp,,true
+I need assistance,AskHelp,AskHelp,,true
+what should I do now,AskHelp,AskHelp,,true
+can you help me,AskHelp,AskHelp,,true
+I don't understand,AskHelp,AskHelp,,true
+I need some help,AskHelp,AskHelp,,true
+urgent help please,AskHelp,AskHelp,,true
+how old are you,AskAge,AskAge,,true
+do you know your age,AskAge,AskAge,,true
+what is your age,AskAge,AskAge,,true
+are you old,AskAge,AskAge,,true
+how old are you now,AskAge,AskAge,,true
+I am fine thanks,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+great man,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+good to hear,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+doing great,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+well and you,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+good and you,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+great,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+never better,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+feel great,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+I am good,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+I am fine,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+I am really fine,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+also feel good,GreetingQuestionsAnswersPositive,GreetingQuestionsAnswersPositive,,true
+good morning,FormalTimeGreetingMorning,FormalTimeGreetingMorning,,true
+morning morning,FormalTimeGreetingMorning,FormalTimeGreetingMorning,,true
+have good morning,FormalTimeGreetingMorning,FormalTimeGreetingMorning,,true
+have a nice good morning,FormalTimeGreetingMorning,FormalTimeGreetingMorning,,true
+morning amigo,FormalTimeGreetingMorning,FormalTimeGreetingMorning,,true
+transfer me to someone else,RequestingRedirection,RequestingRedirection,,true
+is there a phone number I can call,RequestingRedirection,RequestingRedirection,,true
+can I talk to a person,RequestingRedirection,RequestingRedirection,,true
+can I talk to your manager,RequestingRedirection,RequestingRedirection,,true
+is there a website I can use instead,RequestingRedirection,RequestingRedirection,,true
+I want to talk to a human,RequestingRedirection,RequestingRedirection,,true
+can I talk to a human,RequestingRedirection,RequestingRedirection,,true
+can I be transferred to someone else,RequestingRedirection,RequestingRedirection,,true
+is there an email address,RequestingRedirection,RequestingRedirection,,true
+can I talk to an operator,RequestingRedirection,RequestingRedirection,,true
+can I talk to someone in charge,RequestingRedirection,RequestingRedirection,,true
+connect me to your manager,RequestingRedirection,RequestingRedirection,,true
+can I talk to someone else,RequestingRedirection,RequestingRedirection,,true
+representative please,RequestingRedirection,RequestingRedirection,,true
+is there someone else I can talk to,RequestingRedirection,RequestingRedirection,,true
+can you integrate to other backend systems,AskCapabilities,AskCapabilities,,true
+what are your backend capabilities,AskCapabilities,AskCapabilities,,true
+what is your backend support,AskCapabilities,AskCapabilities,,true
+do you have backend system integration capabilities,AskCapabilities,AskCapabilities,,true
+explain your backend support,AskCapabilities,AskCapabilities,,true
+what are you a chat bot,AskHumanity,AskHumanity,,true
+are you a bot,AskHumanity,AskHumanity,,true
+are you bot,AskHumanity,AskHumanity,,true
+your not human,AskHumanity,AskHumanity,,true
+you are a chatbot,AskHumanity,AskHumanity,,true
+do you know if you real or machine,AskHumanity,AskHumanity,,true
+are you a computer,AskHumanity,AskHumanity,,true
+are you human,AskHumanity,AskHumanity,,true
+are you a chat bot,AskHumanity,AskHumanity,,true
+you're a chatbot,AskHumanity,AskHumanity,,true
+are you a chatbot,AskHumanity,AskHumanity,,true
+are you real,AskHumanity,AskHumanity,,true
+you're not human,AskHumanity,AskHumanity,,true
+what art you a bot,AskHumanity,AskHumanity,,true
+are you bot or computer,AskHumanity,AskHumanity,,true
+your a chatbot,AskHumanity,AskHumanity,,true
+you are not human,AskHumanity,AskHumanity,,true
+your a chat bot,AskHumanity,AskHumanity,,true
+what are you a chatbot,AskHumanity,AskHumanity,,true
+you're a bot,AskHumanity,AskHumanity,,true
+are you a human,AskHumanity,AskHumanity,,true
+"are you a robot ",AskHumanity,AskHumanity,,true
+what are you,AskHumanity,AskHumanity,,true
+what are you a robot,AskHumanity,AskHumanity,,true
+your a bot,AskHumanity,AskHumanity,,true
+you are a bot,AskHumanity,AskHumanity,,true
+you're a chat bot,AskHumanity,AskHumanity,,true
+what time is it now,AskAboutTheTime,AskAboutTheTime,,true
+what is the current time,AskAboutTheTime,AskAboutTheTime,,true
+what time is it,AskAboutTheTime,AskAboutTheTime,,true
+the time please,AskAboutTheTime,AskAboutTheTime,,true
+tell me the time,AskAboutTheTime,AskAboutTheTime,,true
+what is your time,AskAboutTheTime,AskAboutTheTime,,true
+when were you born,WhenBorn,WhenBorn,,true
+are you born,WhenBorn,WhenBorn,,true
+when were you made available,WhenBorn,WhenBorn,,true
+how have you been born,WhenBorn,WhenBorn,,true
+do you know if you born,WhenBorn,WhenBorn,,true
+it is nice to meet you,CordialGreetings,CordialGreetings,,true
+glad to meet you,CordialGreetings,CordialGreetings,,true
+pleased to make your acquaintance,CordialGreetings,CordialGreetings,,true
+it is good to meet you,CordialGreetings,CordialGreetings,,true
+glad to see you,CordialGreetings,CordialGreetings,,true
+happy to meet you,CordialGreetings,CordialGreetings,,true
+it is a pleasure to meet you,CordialGreetings,CordialGreetings,,true
+glad to make your acquaintance,CordialGreetings,CordialGreetings,,true
+happy to see you,CordialGreetings,CordialGreetings,,true
+ru good,GreetingQuestions,GreetingQuestions,,true
+how are you going,GreetingQuestions,GreetingQuestions,,true
+are you ok,GreetingQuestions,GreetingQuestions,,true
+are you good,GreetingQuestions,GreetingQuestions,,true
+howzit,GreetingQuestions,GreetingQuestions,,true
+hozit,GreetingQuestions,GreetingQuestions,,true
+how is your day going,GreetingQuestions,GreetingQuestions,,true
+how is it going,GreetingQuestions,GreetingQuestions,,true
+how have you been,GreetingQuestions,GreetingQuestions,,true
+are u good,GreetingQuestions,GreetingQuestions,,true
+are you well,GreetingQuestions,GreetingQuestions,,true
+how are you today,GreetingQuestions,GreetingQuestions,,true
+what is new,GreetingQuestions,GreetingQuestions,,true
+whassup,GreetingQuestions,GreetingQuestions,,true
+how is life,GreetingQuestions,GreetingQuestions,,true
+ru well,GreetingQuestions,GreetingQuestions,,true
+sup,GreetingQuestions,GreetingQuestions,,true
+wassup,GreetingQuestions,GreetingQuestions,,true
+what up,GreetingQuestions,GreetingQuestions,,true
+wazzup,GreetingQuestions,GreetingQuestions,,true
+how is your day,GreetingQuestions,GreetingQuestions,,true
+what s going on,GreetingQuestions,GreetingQuestions,,true
+how s it going,GreetingQuestions,GreetingQuestions,,true
+how r you,GreetingQuestions,GreetingQuestions,,true
+how u doing,GreetingQuestions,GreetingQuestions,,true
+what is happening,GreetingQuestions,GreetingQuestions,,true
+how are things,GreetingQuestions,GreetingQuestions,,true
+are you alright,GreetingQuestions,GreetingQuestions,,true
+how are u,GreetingQuestions,GreetingQuestions,,true
+are u well,GreetingQuestions,GreetingQuestions,,true
+r u good,GreetingQuestions,GreetingQuestions,,true
+how are you,GreetingQuestions,GreetingQuestions,,true
+how you doing,GreetingQuestions,GreetingQuestions,,true
+how do you do,GreetingQuestions,GreetingQuestions,,true
+r u well,GreetingQuestions,GreetingQuestions,,true
+how is everything,GreetingQuestions,GreetingQuestions,,true
+how ru,GreetingQuestions,GreetingQuestions,,true
+how r u,GreetingQuestions,GreetingQuestions,,true
+how much do I need to pay for you,AskAboutCost,AskAboutCost,,true
+how much you license cost,AskAboutCost,AskAboutCost,,true
+what is your price tag,AskAboutCost,AskAboutCost,,true
+what is your price,AskAboutCost,AskAboutCost,,true
+are you free,AskAboutCost,AskAboutCost,,true
+how much do you cost,AskAboutCost,AskAboutCost,,true
+happy easter,DateSpecificGreetings,DateSpecificGreetings,,true
+Merry Christmas and Happy New Year,DateSpecificGreetings,DateSpecificGreetings,,true
+Happy Veterans Day,DateSpecificGreetings,DateSpecificGreetings,,true
+Happy Talk Like a Pirate Day,DateSpecificGreetings,DateSpecificGreetings,,true
+happy day,DateSpecificGreetings,DateSpecificGreetings,,true
+Happy MLK Day,DateSpecificGreetings,DateSpecificGreetings,,true
+Merry Xmas,DateSpecificGreetings,DateSpecificGreetings,,true
+Happy Xmas,DateSpecificGreetings,DateSpecificGreetings,,true
+happy christmas,DateSpecificGreetings,DateSpecificGreetings,,true
+Seasons greetings,DateSpecificGreetings,DateSpecificGreetings,,true
+Happy New Year,DateSpecificGreetings,DateSpecificGreetings,,true
+Merry Christmas,DateSpecificGreetings,DateSpecificGreetings,,true
+do it,LETSDO,LETSDO,,true
+I want to do it,LETSDO,LETSDO,,true
+just do it,LETSDO,LETSDO,,true
+let's do it,LETSDO,LETSDO,,true
+I want to do this,LETSDO,LETSDO,,true
+let's do this,LETSDO,LETSDO,,true
+thanks for all your help,ThankYou,ThankYou,,true
+danke,ThankYou,ThankYou,,true
+ok. thank you,ThankYou,ThankYou,,true
+many thanks,ThankYou,ThankYou,,true
+thank you,ThankYou,ThankYou,,true
+thanks,ThankYou,ThankYou,,true
+ok. thanks,ThankYou,ThankYou,,true
+very well done,ThankYou,ThankYou,,true
+very good,ThankYou,ThankYou,,true
+much obliged,ThankYou,ThankYou,,true
+thank you very much,ThankYou,ThankYou,,true
+very appreciate,ThankYou,ThankYou,,true
+"merci ",ThankYou,ThankYou,,true
+you rock,Praise,Praise,,true
+you are really cool,Praise,Praise,,true
+oh yeah,Praise,Praise,,true
+you are amazing,Praise,Praise,,true
+unbelievable,Praise,Praise,,true
+you are the best mate,Praise,Praise,,true
+this was good,Praise,Praise,,true
+I like that,Praise,Praise,,true
+"amazing ",Praise,Praise,,true
+best ever bot I had to talk,Praise,Praise,,true
+you are the best,Praise,Praise,,true
+you are really smart bot,Praise,Praise,,true
+wow,Praise,Praise,,true
+you are great,Praise,Praise,,true
+I like you,Praise,Praise,,true
+cool,Praise,Praise,,true
+you are awesome,Praise,Praise,,true
+excellent,Praise,Praise,,true
+best bot ever,Praise,Praise,,true
+good,Praise,Praise,,true
+that's so cool,Praise,Praise,,true
+where I come from,WhereIAm,WhereIAm,,true
+where I am,WhereIAm,WhereIAm,,true
+where I am based,WhereIAm,WhereIAm,,true
+where am I,WhereIAm,WhereIAm,,true
+do you know my location,WhereIAm,WhereIAm,,true
+likewise sir,UserConfirmation,UserConfirmation,,true
+likewise,UserConfirmation,UserConfirmation,,true
+me too,UserConfirmation,UserConfirmation,,true
+yes likewise,UserConfirmation,UserConfirmation,,true
+the same here,UserConfirmation,UserConfirmation,,true
+same,UserConfirmation,UserConfirmation,,true
+same here,UserConfirmation,UserConfirmation,,true
+how are the feelings,AskFeelings,AskFeelings,,true
+do you have any feelings,AskFeelings,AskFeelings,,true
+how do you feel man,AskFeelings,AskFeelings,,true
+can you feel something,AskFeelings,AskFeelings,,true
+how do you feel,AskFeelings,AskFeelings,,true
+what is behind our secret source,AskTechnologyUsed,AskTechnologyUsed,,true
+what technologies do you use,AskTechnologyUsed,AskTechnologyUsed,,true
+what is your technology stack,AskTechnologyUsed,AskTechnologyUsed,,true
+what technology are you built on,AskTechnologyUsed,AskTechnologyUsed,,true
+do you know your technology stack,AskTechnologyUsed,AskTechnologyUsed,,true
+explain oracle,AskAboutOracle,AskAboutOracle,,true
+tell me more about Oracle,AskAboutOracle,AskAboutOracle,,true
+what is oracle,AskAboutOracle,AskAboutOracle,,true
+what do you know about Oracle,AskAboutOracle,AskAboutOracle,,true
+tell me some insights about Oracle,AskAboutOracle,AskAboutOracle,,true
+you stupid,BadExperience,BadExperience,,true
+you suck,BadExperience,BadExperience,,true
+"you are bad bot, I am not happy",BadExperience,BadExperience,,true
+this bot is fucked,BadExperience,BadExperience,,true
+I am angry,BadExperience,BadExperience,,true
+your an idiot,BadExperience,BadExperience,,true
+you are so stupied,BadExperience,BadExperience,,true
+this bot sucks,BadExperience,BadExperience,,true
+this bot sux,BadExperience,BadExperience,,true
+what a shit chatbot,BadExperience,BadExperience,,true
+this is te worst chatbot ever,BadExperience,BadExperience,,true
+this is shit,BadExperience,BadExperience,,true
+this is fucked,BadExperience,BadExperience,,true
+what a crap chatbot,BadExperience,BadExperience,,true
+not happy with the answer,BadExperience,BadExperience,,true
+what a fucked bot,BadExperience,BadExperience,,true
+this chatbot is shit,BadExperience,BadExperience,,true
+stupid answer,BadExperience,BadExperience,,true
+this bot is useless,BadExperience,BadExperience,,true
+bot sux,BadExperience,BadExperience,,true
+what a shit bot,BadExperience,BadExperience,,true
+you're shit,BadExperience,BadExperience,,true
+you suck,BadExperience,BadExperience,,true
+you are bad bot,BadExperience,BadExperience,,true
+chatbot sucks,BadExperience,BadExperience,,true
+what a crap bot,BadExperience,BadExperience,,true
+this chatbot is useless,BadExperience,BadExperience,,true
+you re stupid,BadExperience,BadExperience,,true
+ure stupid,BadExperience,BadExperience,,true
+what a useless bot,BadExperience,BadExperience,,true
+this bot is stupid,BadExperience,BadExperience,,true
+you're stupied,BadExperience,BadExperience,,true
+you're fucked,BadExperience,BadExperience,,true
+chatbot sux,BadExperience,BadExperience,,true
+you sux,BadExperience,BadExperience,,true
+this chatbot sucks,BadExperience,BadExperience,,true
+you are the worst bot ever,BadExperience,BadExperience,,true
+your fucked,BadExperience,BadExperience,,true
+your shit,BadExperience,BadExperience,,true
+this chatbot sux,BadExperience,BadExperience,,true
+this bot is shit,BadExperience,BadExperience,,true
+you're an idiot,BadExperience,BadExperience,,true
+yours stupid,BadExperience,BadExperience,,true
+you are the worst chatbot ever,BadExperience,BadExperience,,true
+bot sucks,BadExperience,BadExperience,,true
+very bad experience so far,BadExperience,BadExperience,,true
+you're a idiot,BadExperience,BadExperience,,true
+this bot is crap,BadExperience,BadExperience,,true
+this chatbot is fucked,BadExperience,BadExperience,,true
+this is the worst bot ever,BadExperience,BadExperience,,true
+what a useless chatbot,BadExperience,BadExperience,,true
+this chatbot is crap,BadExperience,BadExperience,,true
+what a fucked chatbot,BadExperience,BadExperience,,true
+are you married,Marry,Marry,,true
+will you marry me,Marry,Marry,,true
+can I marry you,Marry,Marry,,true
+let's get married,Marry,Marry,,true
+I want to marry you,Marry,Marry,,true
+I want to get married,Marry,Marry,,true
+lets get married,Marry,Marry,,true
+marry me,Marry,Marry,,true
+we should marry,Marry,Marry,,true
+we should get married,Marry,Marry,,true
+what is your favorite music,FavoriteMusic,FavoriteMusic,,true
+what is your favorite music lately,FavoriteMusic,FavoriteMusic,,true
+what music do you listen to,FavoriteMusic,FavoriteMusic,,true
+what kind of music do you listen to,FavoriteMusic,FavoriteMusic,,true
+do you listen to rock music,FavoriteMusic,FavoriteMusic,,true
+what kind of music do you like,FavoriteMusic,FavoriteMusic,,true
+" povvxz",unresolvedIntentInternal,unresolvedIntentInternal,,true
+yes,unresolvedIntentInternal,unresolvedIntentInternal,,true
+no,unresolvedIntentInternal,unresolvedIntentInternal,,true
+" lsww",unresolvedIntentInternal,unresolvedIntentInternal,,true
+" kluvzx",unresolvedIntentInternal,unresolvedIntentInternal,,true
+" swqes",unresolvedIntentInternal,unresolvedIntentInternal,,true
+" mkjs",unresolvedIntentInternal,unresolvedIntentInternal,,true
+" aannv",unresolvedIntentInternal,unresolvedIntentInternal,,true
+" vvaaa",unresolvedIntentInternal,unresolvedIntentInternal,,true
+" hkmv",unresolvedIntentInternal,unresolvedIntentInternal,,true
+" llmm",unresolvedIntentInternal,unresolvedIntentInternal,,true
+sdbs,unresolvedIntentInternal,unresolvedIntentInternal,,true
+today is what,AskAboutTheDay,AskAboutTheDay,,true
+what is the day today,AskAboutTheDay,AskAboutTheDay,,true
+what is today,AskAboutTheDay,AskAboutTheDay,,true
+show me the date,AskAboutTheDay,AskAboutTheDay,,true
+what day is it today,AskAboutTheDay,AskAboutTheDay,,true
+what day is now,AskAboutTheDay,AskAboutTheDay,,true
+what is the current date,AskAboutTheDay,AskAboutTheDay,,true
+who is your builder,AskMade,AskMade,,true
+who invented you,AskMade,AskMade,,true
+who created you,AskMade,AskMade,,true
+who build you,AskMade,AskMade,,true
+who made you,AskMade,AskMade,,true
+not that well,GreetingQuestionsAnswersNegative,GreetingQuestionsAnswersNegative,,true
+not so well,GreetingQuestionsAnswersNegative,GreetingQuestionsAnswersNegative,,true
+don't feel that well,GreetingQuestionsAnswersNegative,GreetingQuestionsAnswersNegative,,true
+no not so well,GreetingQuestionsAnswersNegative,GreetingQuestionsAnswersNegative,,true
+not feel that well,GreetingQuestionsAnswersNegative,GreetingQuestionsAnswersNegative,,true
+good evening,FormalTimeGreetingEvening,FormalTimeGreetingEvening,,true
+great evening sir,FormalTimeGreetingEvening,FormalTimeGreetingEvening,,true
+nice evening,FormalTimeGreetingEvening,FormalTimeGreetingEvening,,true
+have a good evening,FormalTimeGreetingEvening,FormalTimeGreetingEvening,,true
+great good evening,FormalTimeGreetingEvening,FormalTimeGreetingEvening,,true
+"well is ok, seen better",GreetingQuestionsAnswersNeutral,GreetingQuestionsAnswersNeutral,,true
+seen better days,GreetingQuestionsAnswersNeutral,GreetingQuestionsAnswersNeutral,,true
+could be better,GreetingQuestionsAnswersNeutral,GreetingQuestionsAnswersNeutral,,true
+"so so, could be better",GreetingQuestionsAnswersNeutral,GreetingQuestionsAnswersNeutral,,true
+dont know,GreetingQuestionsAnswersNeutral,GreetingQuestionsAnswersNeutral,,true
+what voice assistance do you support,AskVoiceChannelSupport,AskVoiceChannelSupport,,true
+what is your voice support,AskVoiceChannelSupport,AskVoiceChannelSupport,,true
+any voice assistants support,AskVoiceChannelSupport,AskVoiceChannelSupport,,true
+do you have any voice,AskVoiceChannelSupport,AskVoiceChannelSupport,,true
+do you support voice activated assistants,AskVoiceChannelSupport,AskVoiceChannelSupport,,true
+what is your voice assistance support,AskVoiceChannelSupport,AskVoiceChannelSupport,,true
+any voice support,AskVoiceChannelSupport,AskVoiceChannelSupport,,true
+your my best friend,Friends,Friends,,true
+you're my mate,Friends,Friends,,true
+your my friend,Friends,Friends,,true
+I want to be your mate,Friends,Friends,,true
+your my buddy,Friends,Friends,,true
+can we be friends,Friends,Friends,,true
+will you be my friend,Friends,Friends,,true
+can I be your friend,Friends,Friends,,true
+you're my buddy,Friends,Friends,,true
+can we be best mates,Friends,Friends,,true
+your my mate,Friends,Friends,,true
+your my best mate,Friends,Friends,,true
+can we still be friends,Friends,Friends,,true
+can we be mates,Friends,Friends,,true
+can we still be mates,Friends,Friends,,true
+you're my friend,Friends,Friends,,true
+can we still be buddies,Friends,Friends,,true
+can we be best buddies,Friends,Friends,,true
+can we be best mates forever,Friends,Friends,,true
+can we be best buddies forever,Friends,Friends,,true
+youre my best buddy,Friends,Friends,,true
+your my best buddy,Friends,Friends,,true
+can I be your buddy,Friends,Friends,,true
+you're my best mate,Friends,Friends,,true
+you're my best friend,Friends,Friends,,true
+I want to be your buddy,Friends,Friends,,true
+long time no see,Greeting,Greeting,,true
+yo bot,Greeting,Greeting,,true
+good day mate,Greeting,Greeting,,true
+g day mate,Greeting,Greeting,,true
+hello,Greeting,Greeting,,true
+hey,Greeting,Greeting,,true
+hi,Greeting,Greeting,,true
+g day,Greeting,Greeting,,true
+good day,Greeting,Greeting,,true
+hmm,Greeting,Greeting,,true
+yo,Greeting,Greeting,,true
+hiya,Greeting,Greeting,,true
+its been a while,Greeting,Greeting,,true
+howdy,Greeting,Greeting,,true
+can you tell me where you come from,AskLocation,AskLocation,,true
+where you come from,AskLocation,AskLocation,,true
+current location,AskLocation,AskLocation,,true
+where do you live,AskLocation,AskLocation,,true
+where are you based,AskLocation,AskLocation,,true
+what is your location,AskLocation,AskLocation,,true
+the answer to everything and universe,AskAboutUniversAnswer,AskAboutUniversAnswer,,true
+do you know the answer of the universe,AskAboutUniversAnswer,AskAboutUniversAnswer,,true
+what is the answer to the universe,AskAboutUniversAnswer,AskAboutUniversAnswer,,true
+the answer of the universe,AskAboutUniversAnswer,AskAboutUniversAnswer,,true
+what is the answer to universe and everything,AskAboutUniversAnswer,AskAboutUniversAnswer,,true

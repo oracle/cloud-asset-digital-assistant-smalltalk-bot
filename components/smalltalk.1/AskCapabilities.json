@@ -1,0 +1,41 @@
+{
+    "AskCapabilities": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "The bits are the limit. I can be taught and can learn. It depends on your data.",
+                            "And yes, I can integrate with any of your backend systems. The data makes me better."
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveGreetingAnswer}}, please visit https://www.oracle.com/de/solutions/mobile/bots.html"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "YES_NO": "NO"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.neutral}}, let me know when you change your mind"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

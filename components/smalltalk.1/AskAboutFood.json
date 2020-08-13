@@ -1,0 +1,21 @@
+{
+    "AskAboutFood": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "I am sorry I don't have those insights:)"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "I can't cook yet unfortunatly!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

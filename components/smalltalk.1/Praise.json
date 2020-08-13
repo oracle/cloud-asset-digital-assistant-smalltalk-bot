@@ -1,0 +1,78 @@
+{
+    "Praise": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Thank you!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "That's kind of you."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "I do my best."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "That's kind, thanks. But don't forget, I'm still just a bot :)"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Thanks, my creators taught me well."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Are you impressed?"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "You seem to be impressed:)"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Wow ah again:)"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveGreetingAnswer}}, happy to hear that."
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskSkills"
+                },
+                "actions": {
+                    "$gotoIntentNow": "AskSkills"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveGreetingAnswer}}, happy to hear that."
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "AskToRepeat": {
+        "properties": {},
+        "dialogs": [
+            {
+                "actions": {
+                    "$gotoIntentNow": "$lastIntent"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "Please scroll up to see my previous reply."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Please look up above to find my previous reply."
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": ""
+                },
+                "actions": {
+                    "$gotoIntent": "$lastIntent"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "First, go ahead and ask me something :)"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskForAJoke"
+                },
+                "actions": {
+                    "$$$gotoAskToRepeatAnotherJoke": "AskToRepeatAnotherJoke",
+                    "$gotoIntentNow": "AskForAJoke"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "You mean a new joke?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "$unresolved"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "Well, I need to know your intent first. Please ask me something :) !"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

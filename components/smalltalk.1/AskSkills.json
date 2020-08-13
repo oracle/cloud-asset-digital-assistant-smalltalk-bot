@@ -1,0 +1,145 @@
+{
+    "AskSkills": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Well, my skills for this service are limited but I could do some chit chat!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "I do have some smalltalk skills but you can teach me also something new if you wish?"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "I can answer some chit chat questions and have some limited capabilities but you can teach me new stuff if you wish?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "Teach"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.solala}}, go ahead and open this page for more information: https://cloud.oracle.com/digital-assistant"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "MoveOn"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "super, open this page https://cloud.oracle.com/digital-assistant"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskSkills"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.solala}}, my skills are limited only to some smalltalk chats. Do you want to teach me more?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskSkills",
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveGreetingAnswer}}, please visit https://www.oracle.com/solutions/mobile/bots.html"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskSkills",
+                    "$isRepeating": true,
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.repeating}}, please visit https://www.oracle.com/solutions/mobile/bots.html"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskSkills",
+                    "YES_NO": "NO"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "Anyway, if you want to know more please just let me know."
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "Praise"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "Thanks, I am glad you like my skills, I am still bot however, don't forget!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "AskSkills-de": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Ich bin einfach ein Small.Talk Bot, aber ich bin sehr flexible, Du kannst mich neue Sachen beibringen, möchtest Du es erfahren wie?"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Ich kann nur Small.Talk, aber Du kannst mich mehr beibringe, möchtest Du mehr Information darüber?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveGreetingAnswer-de}}, please visit https://www.oracle.com/de/solutions/mobile/bots.html"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

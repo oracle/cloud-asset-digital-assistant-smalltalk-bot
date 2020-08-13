@@ -1,0 +1,10 @@
+*.tgz
+spec
+service-*
+package/
+.vscode
+builds
+docs
+pls
+spec
+jasmine*

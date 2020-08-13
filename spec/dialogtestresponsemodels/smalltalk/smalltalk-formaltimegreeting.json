@@ -1,0 +1,124 @@
+{
+  "FormalTimeGreetingMorning": {
+    "properties": {},
+    "dialogs": [
+      {
+        "properties": {},
+        "replays": [
+          {
+            "text": [
+              "good morning"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "template": true
+        },
+        "replays": [
+          {
+            "text": [
+              "good morning {{profile}}"
+            ]
+          }
+        ]
+      },
+
+      {
+        "properties": {
+          "validator": false
+        },
+        "replays": [
+          {
+            "text": [
+              "doesn't look like is morning right now:), my time shows it's {{MESSAGE}}"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "FormalTimeGreetingAfternoon": {
+    "properties": {},
+    "dialogs": [
+      {
+        "properties": {
+        },
+        "replays": [
+          {
+            "text": [
+              "good afternoon",
+              "good afternoon",
+              "good afternoon"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "template": true
+        },
+        "replays": [
+          {
+            "text": [
+              "good afternoon {{profile}}"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "validator": false
+        },
+        "replays": [
+          {
+            "text": [
+              "doesn't look like it is afternoon, my time shows it's {{MESSAGE}}"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "FormalTimeGreetingEvening": {
+    "properties": {},
+    "dialogs": [
+      {
+        "properties": {
+        },
+        "replays": [
+          {
+            "text": [
+              "good evening"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "template": true
+        },
+        "replays": [
+          {
+            "text": [
+              "good evening {{profile}}"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "validator": false
+        },
+        "replays": [
+          {
+            "text": [
+              "doesn't look like it is evening, my time shows it's {{MESSAGE}}"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

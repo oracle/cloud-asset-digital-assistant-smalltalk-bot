@@ -1,0 +1,90 @@
+{
+  "Greeting": {
+    "properties": {},
+    "dialogs": [
+      {
+        "properties": {
+          "type": "normal"
+        },
+        "replays": [
+          {
+            "text": [
+              "hi there"
+            ]
+          },
+          {
+            "text": [
+              "hello"
+            ]
+          },
+          {
+            "text": [
+              "hi"
+            ]
+          },
+          {
+            "text": [
+              "jo"
+            ]
+          },
+          {
+            "text": [
+              "hi, how you doing?"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "type": "repetitive"
+        },
+        "replays": [
+          {
+            "text": [
+              "{{$$textChunk.onpositivegreetinganswer}}, {{#$$textChunk.neutral}}{{$$textChunk.neutral}}{{/$$textChunk.neutral}}, what can I do for you {{#profile}}Mr.{{profile}}{{/profile}}"
+            ]
+          },
+          {
+            "text": [
+              "what can I do for you?"
+            ]
+          }
+        ]
+      },
+      {
+        "replays": [
+          {
+            "text": [
+              "jo, you made it!"
+            ]
+          },
+          {
+            "text": [
+              "jo, you made it again!"
+            ]
+          }
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "I am sorry, I understand your greeting intention but my master didn't teach me how to answer?"
+              ]
+            },
+            {
+              "text": [
+                "Damn, I understand your greeting intention but have no answer given from my master, can you try to ask the question again?"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

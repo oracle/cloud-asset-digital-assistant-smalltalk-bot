@@ -1,0 +1,78 @@
+{
+    "$$repetitiveThresholdModel": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.repeating}}"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "hitThreshold": true
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.rerepeating}}"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "overThreshold": true
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.overrepeating}}"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "$$repetitiveThresholdModel-de": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.repeating-de}}"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "hitThreshold": true
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.rerepeating-de}}"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "overThreshold": true
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.overrepeating}}"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

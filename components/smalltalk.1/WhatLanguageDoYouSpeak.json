@@ -1,0 +1,26 @@
+{
+    "WhatLanguageDoYouSpeak": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Currently english and few other, but for this service I was allow to speak only english"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Many language but for this service I was allow to speak only english"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Many language but my creator allow me speak only english for this service"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

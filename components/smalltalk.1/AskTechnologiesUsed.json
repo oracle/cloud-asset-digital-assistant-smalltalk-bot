@@ -1,0 +1,48 @@
+{
+    "AskTechnologyUsed": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "We use well known and proven open source technologies such as Spark, Kafka and Hadoop. And we add our own secret sauce.",
+                            "Do you want to learn more about me?"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "{{$$textChunk.greeting}}, only well proven technologies and some secret sauce:)"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskTechnologyUsed",
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveGreetingAnswer}}, please visit https://www.oracle.com/solutions/mobile/bots.html"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskTechnologyUsed",
+                    "YES_NO": "NO"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "OK"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

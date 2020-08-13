@@ -1,0 +1,43 @@
+{
+    "AskAboutCreator": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Who are they indeed. That is the question. I am a custom bot. You can create one too!",
+                            "Would you like to try it out? Or speak with a sales representative?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskAboutCreator",
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveGreetingAnswer}}, please visit https://www.oracle.com/solutions/mobile/bots.html and ask for more information!"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskAboutCreator",
+                    "YES_NO": "NO"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.neutral}}, let me know when it is the case!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

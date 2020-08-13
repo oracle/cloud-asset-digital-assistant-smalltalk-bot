@@ -1,0 +1,41 @@
+{
+  "AskName": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "Just call me bot :)"
+            ]
+          },
+          {
+            "text": [
+              "I’m just a chat bot computer program, and I don’t even have a name!"
+            ]
+          }
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "I'm sorry, I understand your greeting intention but my creators didn't teach me how to answer."
+              ]
+            },
+            {
+              "text": [
+                "Darn, I understand your greeting intention but I have no answer. Can you please try to ask the question again?"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

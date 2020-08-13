@@ -1,0 +1,41 @@
+{
+    "SayGoodBuy": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Buy!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "See you!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveButNeutral}}, see you again!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "So long!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveButNeutral}}, buy-buy!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "{{$$textChunk.onPositiveButNeutral}}, adios!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

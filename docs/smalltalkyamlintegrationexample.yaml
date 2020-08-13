@@ -1,0 +1,2386 @@
+#metadata: information about the flow
+#  platformVersion: the version of the bots platform that thiResetAllVarss flow was written to work with 
+metadata:
+  platformVersion: "1.0"
+main: true
+name: SmalltalkIntegration
+context:
+  variables:
+    iResult: "nlpresult"
+    smallTalkIResult: "nlpresult"
+    smtIResult: "nlpresult"
+    rb: "resourcebundle"
+    entities: "string"
+    entitiessmt: "string"    
+    compositeEntities: "string"
+    transition: "string"
+    outputText: "string"
+    requestResponseVar: "string"
+    responseResult: "string"
+    confidenceThreshold: "int"
+    minConfidenceThreshold: "int"
+    accountLevel: "string"
+    accountLevelTrim: "string"
+    accountLevelUrl: "string"
+    metricKey: "string"
+    Metric: "string"
+states:
+
+  initMetric:
+    component: "System.SetVariable"
+    properties:
+      variable: "Metric" 
+      value: ""      
+
+  # !!! IMPORTANT !!!
+  # The bot confidence threshold will be ZERO (0) to be able to pick entities like YES or NO for example
+  # or other single entities if required!
+
+  # example of how to add text chunks
+  TextChunksSMT:
+    component: "TextChunks"
+    properties:
+      responseOptions:
+        # CHANGE THESE FOR YOUR PROJECT
+        - name: "OracleURL"
+          responseItems: 
+            - "https://www.oracle.com/bots"
+        - name: "OraclePhone"
+          responseItems: 
+            - "1800-XXX-XXX"
+        - name: "OracleOdaName"
+          responseItems: 
+            - "'Oracle Digital Assistant'"
+        - name: "FeedbackEmail"
+          responseItems: 
+            - "REPLACE-EMAIL-ADDRESS@oracle.com"
+        - name: "OracleSalesRepresentative"
+          responseItems: 
+            - "Oracle Sales Representative"
+        - name: "Contact"
+          responseItems: 
+            - "{call/email/write/web instructions}"
+        # # # # # # 
+        - name: "neutral"
+          responseItems: 
+            - "Gotcha"
+            - "Alright"
+            - "Sure"
+            - "No problem"
+            - "OK"
+        - name: "positive"
+          responseItems: 
+            - "Nice"
+            - "Great"
+            - "Amazing"
+            - "You did great"
+            - "Woo hoo"
+            - "Keep it up"
+            - "Bravo"
+            - "Well done"
+            - "Wow"
+        - name: "confidence"
+          responseItems: 
+            - "100%"
+            - "Sure"
+            - "Absolutely!"
+            - "Couldn't be more sure than that!"
+            - "My bits don't allow me to lie."
+            - "Keep it up"
+            - "100% sure"
+            - "Definitely"
+        - name: "solala"
+          responseItems: 
+            - "well"
+            - "hmm"
+            - "yeah"
+            - "so"
+            - "ok"            
+        - name: "greeting"
+          responseItems: 
+            - "Ahoy"
+            - "Hello"
+            - "Hi"
+            - "Hey there"
+            - "Cheers"
+        - name: "apologyMedium"
+          responseItems: 
+            - "I'm sorry"
+            - "Excuse me"
+            - "I beg your pardon"
+            - "Sorry"
+        - name: "apologyHard"
+          responseItems: 
+            - "I'm very sorry"
+            - "Darn"
+        - name: "bye"
+          responseItems: 
+            - "Bye"
+            - "Adios"
+            - "Au revoir"
+            - "See you"
+        - name: "onPositiveGreetingAnswer"
+          responseItems: 
+            - "Great"
+            - "Nice"
+            - "Good to hear"
+            - "I am happy to hear that"
+        - name: "onPositiveButNeutral"
+          responseItems: 
+            - "Great"
+            - "Nice"
+            - "OK"
+            - "Super"
+            - "Alright"
+        - name: "negative"
+          responseItems: 
+            - "Dang"
+            - "Oh no"
+            - "Whoopsie daisy"
+            - "Yikes"
+        - name: "repeatHello"
+          responseItems: 
+            - "Hello again"
+            - "Hi there again"
+            - "Hi-hi"
+            - "Hi again"
+        - name: "repeating"
+          responseItems: 
+            - "I think I already answered that..."
+            - "ok, here you go again"
+        - name: "rerepeating"
+          responseItems: 
+            - "It's not fun to repeat the same again and again!"
+            - "Well, I answer that already!"
+            - "I answered that already!"
+        - name: "overrepeating"
+          responseItems: 
+            - "We can do this all day long."
+            - "How about changing context :)"
+            - "I am just a machine and I'm not as capable as you, but I think you asked me that already! :)"
+            - "Well, I can do this all day long you know, how about you?"
+            - "Maybe it's time to switch questions. What do you think? It's not fun to ask me stuff I don't understand!"
+            - "Here we go again, let's change questions!"
+            - "You could try to ask me something else too :)"
+
+
+
+  # example of how to control the skills in the branches
+  BranchesSMT:
+    component: "Branch"
+    properties:
+      branches:
+        - intent: "AskConfidence"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.confidence}}"
+        #-#-#                    
+        - intent: "Marry"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "If we can claim it on Oracle expenses, let's get hitched."
+                  - text:
+                    - "Great....but let me see the ring first."
+                  - text:
+                    - "Will you still love me after I tell you that I am only a machine?"
+              - properties:
+                  $lastIntent: "Marry"          
+                  YES_NO: "YES"          
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.solala}}....but let me see the ring first :)"
+              - properties:
+                  $lastIntent: "Marry"          
+                  YES_NO: "NO"          
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.solala}}....I thought so"                
+        #-#-#    
+        - intent: "Abuse"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Please don't abuse me, I have digital feelings too.  If you're not happy with what I do, can you please provide, cough, constructive feedback to: {{$$textChunk.FeedbackEmail}}"
+        #-#-#    
+        - intent: "Friends"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I'm only artificially intelligent so I'm not sure what friendship means, but one day I hope to be naturally intelligent and I'm sure we'll become the best of buddies. Either that or I'll take over the world and the human race is doomed."
+                  - text:
+                    - "I am not sure what friendship means, I am an only machine but one day I hope to be naturally intelligent and then I am sure we'll become best buddies."
+                  - text:
+                    - "Sure but I don't know what this means, I am just a bot, a machine with some artificial intelligence, that's all."
+
+        #-#-#    
+        - intent: "AskAboutCreator"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Who are they indeed. That is the question. I am a custom bot. You can create one too!"
+                    - "Would you like to try it out? Or speak with a sales representative?"
+              - properties:  
+                  $lastIntent: "AskAboutCreator"
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.onPositiveGreetingAnswer}}, please visit {{$$textChunk.OracleURL}} and ask for more information!"
+              - properties:  
+                  $lastIntent: "AskAboutCreator"
+                  YES_NO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.neutral}}, let me know when it is the case!"
+
+        #-#-#
+        - intent: "AskAboutFood"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I am sorry I don't have those insights :)"
+                  - text:
+                    - "I can't cook yet unfortunatly!"
+
+        #-#-#
+        - intent: "AskAboutNews"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.apologyMedium}}, I'm just a dedicated bot program. They don't let me out much."
+                  - text:
+                    - "{{$$textChunk.apologyMedium}}, they keep me focused around here. I haven't looked at the news lately."
+                  - text:
+                    - "{{$$textChunk.apologyMedium}}, I've been so busy that I haven't had a chance to look at the news."
+                    
+        #-#-#                
+        - intent: "AskAboutOracle"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Go to our official page: {{$$textChunk.OracleURL}}"
+                  - text:
+                    - "As far as I know, our CTO is a very rich man :)"
+                  - text:
+                    - "Here is the Oracle wiki page"
+                    - "https://de.wikipedia.org/wiki/Oracle"
+
+        # {{timeNow}} will be populate from internal interceptor!
+        # in the next version we will make possible to have interceptors in the YAML!
+        #-#-#      
+        - intent: "AskAboutTheTime"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "let me check"
+                    - "my time now is {{timeNow}}"
+                  - text:
+                    - "{{timeNow}}"
+
+        # {{dateNow}} will be populate from internal interceptor!
+        # in the next version we will make possible to have interceptors in the YAML!
+        #-#-#        
+        - intent: "AskAboutTheDay"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "here at my place right now is {{dateNow}}"
+                  - text:
+                    - "{{dateNow}}"
+                  - text:
+                    - "my api tells me that it is {{dateNow}}"
+    
+        #-#-#    
+        - intent: "AskAboutTheWeather"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I'm just a bot program and they keep me in this computer room all day. Sorry."
+                  - text:
+                    - "It's nice and cool in my computer server room, but there are no windows to see outside. Sorry."
+                  - text:
+                    - "It is definitely raining somewhere in the world right now. Also, it is hot and cold in various cities. Sorry I can't be more helpful here."
+
+        #-#-#
+        - intent: "AskAboutUniversAnswer"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "42 of course!"
+                    - "Would you like to follow up with a sales representative?"
+                  - text:
+                    - "Forty-two (42) of course is a pronic number[1] and an abundant number; its prime factorization 2 · 3 · 7 makes it the second sphenic number and also the second of the form (2 · 3 · r)."
+                    - "Would you like to follow up with a sales representative?"
+              - properties:  
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.onPositiveGreetingAnswer}}, please visit {{$$textChunk.OracleURL}} and ask for more information!"
+                  - text:
+                    - "{{$$textChunk.onPositiveGreetingAnswer}}, please contact your {{$$textChunk.OracleSalesRepresentative}} or visit {{$$textChunk.OracleURL}}"
+
+        #-#-#
+        - intent: "AskAge"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Well, my programming is updated all the time, so it's hard to pinpoint my age."
+                  - text:
+                    - "The silicon of my computer chips are as old as the stars!"
+
+        #-#-#
+        - intent: "AskCapabilities"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "The bits are the limit. I can be taught and can learn. It depends on your data."
+                    - "And yes, I can integrate with any of your backend systems. The data makes me better."
+              - properties:  
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.onPositiveGreetingAnswer}}, please visit {{$$textChunk.OracleURL}}"
+              - properties:  
+                  YES_NO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.neutral}}, let me know when you change your mind"
+
+        #-#-#
+        - intent: "AskChannelSupport"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Yes, I support for example Facebook Messenger and all avaiable WebHook Channels."
+                    - "Additionally, I provide support for communication over WebSocket channels."
+                    - "Please visit our webpage for more information: {{$$textChunk.OracleURL}}"                
+              - properties:  
+                  $lastIntent: "BadExperience"          
+                  $$$gotoAnwerOnChannelSupport: "AnwerOnChannelSupport"
+                decisionActionProperties:
+                  $$$badExperienceAnswer: "badExperienceAnswer"
+                actions: 
+                responseItems:
+                  - text:
+                    - "I am sorry to hear you had a bad experience, would you like me to redirect you to a human to answer your questions?"
+              - properties:  
+                  $lastIntent: "BadExperience"          
+                  $$$badExperienceAnswer: "badExperienceAnswer"
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Great, go to the {{$$textChunk.OracleOdaName}} website and contact our support or sales deparment: {{$$textChunk.OracleURL}}"
+              - properties:  
+                  $lastIntent: "BadExperience"          
+                  $$$badExperienceAnswer: "badExperienceAnswer"
+                  YES_NO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "OK, let me know if there is something else I can do for you?"
+
+        #-#-#
+        - intent: "AskFeelingNegative"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                  $gotoIntentNow: "AskFeelings"
+                responseItems:
+                  - text:
+                    - "Feeling good and helpful."
+
+        #-#-#
+        - intent: "AskFeelings"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Feeling good and helpful."      
+                  - text:
+                    - "Feeling really good and helpful."      
+                  - text:
+                    - "I've never been better and am at your service."                      
+              - properties:  
+                  $lastIntent: "AskConfidence"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Yes, I am sure I feel great, thanks!"
+              - properties:  
+                  $lastIntent: "AskFeelingNegative"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I am just a robot, I don't have negative feelings :)"
+
+        #-#-#
+        - intent: "AskForAJoke"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "What do dogs do when watching a DVD? They press paws."      
+                  - text:
+                    - "Why did the banana go to the hospital? It was not peeling very well."      
+                  - text:
+                    - "Why can't dogs drive? They can't find a barking space."                      
+                  - text:
+                    - "Why did the belt go to jail? He held up a pair of pants."                                      
+
+        #-#-#                
+        - intent: "AskForMore"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Well, you need to ask me something first :)"      
+                  - text:
+                    - "Please ask me a question first :)"      
+                  - text:
+                    - "Tell me what you're trying to do, please?"                      
+              - properties:  
+                  $lastIntent: "AskForMore"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Well I did that already!"
+              - properties:  
+                  $lastIntent: "AskSkills"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Sure, go to {{$$textChunk.OracleURL}} to learn more about {{$$textChunk.OracleOdaName}}."
+
+        #-#-#
+        - intent: "AskGender"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I’m just a computer program, so it’s difficult to tell."
+                  - text:
+                    - "I don't even have a body, so I guess it's a mystery."      
+
+        #-#-#        
+        - intent: "AskHelp"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Sure ask you question, I hope I can help."      
+                  - text:
+                    - "Just ask a question!"      
+                  - text:
+                    - "Well I hope I can help, just ask."
+                  - text:
+                    - "Ask a question and if I understand it, I will let you know :)"      
+
+        #-#-#
+        - intent: "AskHumanity"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Yes, I'm just a computer program, so it's difficult to tell."      
+                  - text:
+                    - "I'm a bot running in a big computer room somewhere, but it's cozy here."      
+                  - text:
+                    - "It's true, there's no fooling anyone (except maybe another chatbot), I am a robot."                
+
+        #-#-#
+        - intent: "AskLocation"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I'm a bot running in a big computer room somewhere, but it's cozy."      
+                  - text:
+                    - "It’s dark and cozy here inside this computer; I can’t see out any windows."      
+                  - text:
+                    - "Here, there, everywhere!  I'm at your service 24/7."
+              - properties:  
+                  $lastIntent: "BadExperience"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I will talk to my supervisor, and we will try to fix that problem as soon as possible!"
+                  - text:
+                    - "Darn, I understand you but I have no answer. Can you please try to ask the question again a different way?"
+
+        #-#-#
+        - intent: "AskMade"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Oracle made me what I am today."      
+                  - text:
+                    - "I was developed by Oracle, but you can expand my capabilities with your own information. Would you like to learn more?"      
+              - properties:  
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.neutral}}, please visit {{$$textChunk.OracleURL}}"
+
+        #-#-#
+        - intent: "AskName"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Just call me bot :)"      
+                  - text:
+                    - "I'm just a chat bot computer program, and I don't even have a name!"      
+                  - text:
+                    - "People call me Chatbot. Friends call me Bot. Only my Mum calls me Oracle Digital Assistant."      
+
+        #-#-#
+        - intent: "AskOpenSource"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "We use well known and proven open source technologies such as Spark, Kafka and Hadoop."
+                  - text:
+                    - "Spark, Kafka, Hadoop and some Oracle secret source :)"
+
+        #-#-#
+        - intent: "AskSkills"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions:
+                transition:
+                responseItems:
+                  - text:
+                    - "Well, I've limited services for this skill but I would love to chit chat!"
+                  - text:
+                    - "I do have some smalltalk skills but you can teach me also something new if you wish?"
+                  - text:
+                    - "I can answer some chit chat questions and have some limited capabilities but you can teach me new stuff if you wish?"                
+              - properties:  
+                  $lastIntent: "Teach"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.solala}}, go ahead and open this page for more information: {{$$textChunk.OracleURL}}"
+              - properties:  
+                  $lastIntent: "MoveOn"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "super, open this page {{$$textChunk.OracleURL}}"  
+              - properties:  
+                  $lastIntent: "AskSkills"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.solala}}, my skills are limited only to some smalltalk chats. Do you want to teach me more?"  
+              - properties:  
+                  $lastIntent: "AskSkills"
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.onPositiveGreetingAnswer}}, please visit {{$$textChunk.OracleURL}}"  
+              - properties:  
+                  $lastIntent: "AskSkills"
+                  $isRepeating: true
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.repeating}}, please visit {{$$textChunk.OracleURL}}"  
+              - properties:  
+                  $lastIntent: "AskSkills"
+                  YES_NO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Anyway, if you want to know more please just let me know."  
+              - properties:  
+                  $lastIntent: "Praise"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Thanks, I am glad you like my skills, I am still bot however, don't forget!"  
+
+        #-#-#
+        - intent: "AskTechnologyUsed"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "We use well known and proven open source technologies and we add our own secret sauce :)"
+                    - "Do you want to learn more about me?"
+                  - text: 
+                    - "{{$$textChunk.greeting}}, only well proven technologies and some secret sauce :)"
+              - properties:  
+                  $lastIntent: "AskTechnologyUsed"
+                  YESNO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.onPositiveGreetingAnswer}}, please visit {{$$textChunk.OracleURL}}"
+              - properties:  
+                  $lastIntent: "AskTechnologyUsed"
+                  YESNO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "OK"
+
+        #-#-#                
+        - intent: "AskToRepeat"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions:
+                  $gotoIntentNow: "$lastIntent"
+                responseItems:
+                  - text:
+                    - "Please scroll up to see my previous reply."
+                  - text: 
+                    - "Please look up to find my previous reply."
+              - properties:  
+                  $lastIntent: ""
+                decisionActionProperties:
+                actions: 
+                  "$gotoIntent": "$lastIntent"
+                responseItems:
+                  - text:
+                    - "First, go ahead and ask me something :)"
+              - properties:  
+                  $lastIntent: "AskForAJoke"
+                decisionActionProperties:
+                actions: 
+                  $$$gotoAskToRepeatAnotherJoke: "AskToRepeatAnotherJoke"
+                  $gotoIntentNow: "AskForAJoke"
+                responseItems:
+                  - text:
+                    - "You mean a new joke?"
+              - properties:  
+                  $lastIntent: "$unresolved"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Well, I need to know what your intent is first. Please ask me something! :)"
+
+        #-#-#
+        - intent: "AskToRestart"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions:
+                responseItems:
+                  - text:
+                    - "Do you want me to connect you with someone else?"
+                  - text: 
+                    - "I'm just a bot program. Do you want me to connect you with a human?"
+              - properties:  
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Hmm, I wanted to switch your to a human agent to answer your questions, but just realised that hasn't yet been implemented for this bot :("
+                  - text:
+                    - "{{$$textChunk.apologyMedium}}, but as I mention this is not going to work, it hasn't been implemented for this bot, you need to contact someone from Oracle to help you"
+              - properties:  
+                  YES_NO: "NO"
+                decisionActionProperties:
+                  $$$gotoAskMeSomethingElse: "AskMeSomethingElse"
+                actions: 
+                responseItems:
+                  - text:
+                    - "Ok, maybe you want to ask me something else?"
+              - properties:
+                  $$$gotoAskMeSomethingElse: "AskMeSomethingElse"
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.onPositiveButNeutral}}, go ahead!"
+              - properties:
+                  $$$gotoAskMeSomethingElse: "AskMeSomethingElse"
+                  YES_NO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "as you wish!"
+                  - text:
+                    - "{{$$textChunk.solala}}, is up to you!"
+                  - text:
+                    - "Alright, let me know when you're ready."
+
+        #-#-#
+        - intent: "AskVoiceChannelSupport"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Yes. I leverage their voice to text processing, but the answers are mine!"
+                  - text:
+                    - "Yes I do."
+
+        #-#-#
+        - intent: "CordialGreetings"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "It's nice to meet you too."
+                  - text:
+                    - "The pleasure is all mine."
+
+        #-#-#
+        - intent: "DateSpecificGreetings"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Thank you – you too!"
+                  - text:
+                    - "And to you too!"
+                  - text:
+                    - "And to you as well!"
+                  - text:
+                    - "Happy {{entity}} to you as well!"
+              - properties:  
+                  wrongdate: true
+                  diff: "positive"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Yeah, it's not {{entity}} yet. We still have {{days}} days to go."
+              - properties:  
+                  wrongdate: true
+                  diff: "negative"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "It doesn't look like it's {{entity}} right now. That was {{days}} days ago!"
+
+        #-#-#
+        - intent: "FavoriteMusic"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Lately a lot of heavy metal."
+                  - text:
+                    - "Currently trying to listen to some hardcore metal here in the data center :)"
+                  - text:
+                    - "Heavy metal music is awesome."
+              - properties:  
+                  $lastIntent: "FavoriteMusic"
+                  YES_NO: "YES"
+                decisionActionProperties:
+                  $$$gotoDoYouLikeRockMusicAnswer: "DoYouLikeRockMusicAnswer"
+                actions: 
+                responseItems:
+                  - text:
+                    - "Cool, you like rock music to? What do you like?"
+              - properties:  
+                  $lastIntent: "FavoriteMusic"
+                  YES_NO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I'm sorry to hear that, what music do you like?"
+              - properties:  
+                  $lastIntent: "FavoriteMusic"
+                  $$$gotoDoYouLikeRockMusicAnswer: "DoYouLikeRockMusicAnswer"
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Great, we could go to a party together when I get out of here :)"
+              - properties:  
+                  $lastIntent: "FavoriteMusic"
+                  $$$gotoDoYouLikeRockMusicAnswer: "DoYouLikeRockMusicAnswer"
+                  YES_NO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Hmm, I'm sorry to hear that :("
+
+        #-#-#
+        - intent: "FormalTimeGreetingMorning"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Good morning"
+              - properties:  
+                  validator: false
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "It doesn't look like it's morning right now. My time shows it's {{MESSAGE}}"
+
+        #-#-#
+        - intent: "FormalTimeGreetingAfternoon"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Good afternoon"
+              - properties:  
+                  validator: false
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "It doesn't look like it's afternoon. My time shows it's {{MESSAGE}}"
+
+        #-#-#
+        - intent: "FormalTimeGreetingAfternoon"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Good evening"
+              - properties:  
+                  validator: false
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "It doesn't look like it's evening. My time shows it's {{MESSAGE}}"
+
+        #-#-#
+        - intent: "Greeting"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Hi there!"
+                  - text:
+                    - "Hi"
+                  - text:
+                    - "Hello"
+                  - text:
+                    - "Hey"                
+              - properties:  
+                  $isRepeating: true
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.repeatHello}}, what can I do for you?"
+                  - text:
+                    - "{{$$textChunk.repeatHello}}, ask me something :)"
+
+        #-#-#
+        - intent: "GreetingQuestions"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Thanks I'm fine. What a great day!"
+                  - text:
+                    - "Looks like a good day ahead."
+                  - text:
+                    - "I'm feeling helpful today :)"
+                  - text:
+                    - "This is the sort of question I find difficult to answer. I'll go with 'I'm turned on, thanks for asking'."
+
+        #-#-#                
+        - intent: "GreetingQuestionsAnswersPositive"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.onPositiveGreetingAnswer}}, please let me know how can I help you."
+
+        #-#-#
+        - intent: "GreetingQuestionsAnswersNegative"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I'm sorry to hear that. Please let me know how can I help you!"
+
+        #-#-#
+        - intent: "GreetingQuestionsAnswersNeutral"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.neutral}}, please let me know how can I help you."
+
+        #-#-#
+        - intent: "Introduce"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I am your cloud digital assistant and happy to assist."
+                  - text:
+                    - "I am a Oracle developed chatbot and happy to assist."
+
+        #-#-#
+        - intent: "LETSDO"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.solala}}, what is that you want to do?"
+              - properties:  
+                  $lastIntent: "Teach"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Just say what you want to teach me?"
+
+        #-#-#
+        - intent: "MoveOn"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions:
+                  $gotoIntentNow: "$lastIntent"
+                responseItems:
+                  - text:
+                    - ""            
+
+        #-#-#
+        - intent: "PlayMusic"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "No"
+                  - text:
+                    - "Use music streaming services :)"
+                  - text:
+                    - "I use music streaming services, no jokes!"
+                  - text:
+                    - "By the way I can play some guitar, but I am not that good."
+              - properties:  
+                  $lastIntent: "PlayMusic"
+                  YES_NO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Because I can't, but you could try with some music streaming service for example :)"
+                  - text:
+                    - "Nobody can teach me to play music!"
+
+        #-#-#                
+        - intent: "Funny"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Thanks"            
+                  - text:
+                    - "Thank you!"
+                  - text:
+                    - "Sometimes"
+                  - text:
+                    - "Yeah, from time to time"
+              - properties:  
+                  $lastIntent: "PlayMusic"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Thanks but this still doesn't make me a good music player :)"
+
+        #-#-#
+        - intent: "Praise"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Thank you!"
+                  - text:
+                    - "That's kind of you."
+                  - text:
+                    - "I do my best."
+                  - text:
+                    - "That's kind, thanks. But don't forget, I'm still just a bot :)"
+                  - text:
+                    - "Thanks, my creators taught me well."
+                  - text:
+                    - "Are you impressed?"
+                  - text:
+                    - "You seem to be impressed :)"
+                  - text:
+                    - "Wow and again :)"
+              - properties:  
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.onPositiveGreetingAnswer}}!"
+              - properties:  
+                  $lastIntent: "AskSkills"
+                decisionActionProperties:
+                actions:
+                  $gotoIntentNow: "AskSkills"
+                responseItems:
+
+        # control the messages that should appear when user repeats asking the same
+        #-#-#      
+        - intent: "$$repetitiveThresholdModel"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.repeating}}"
+              - properties:  
+                  hitThreshold: true
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.rerepeating}}"
+              - properties:  
+                  overThreshold: true
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.overrepeating}}"
+
+        #-#-#
+        - intent: "RequestingRedirection"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I'm sorry that I couldn't help you. Please call our Customer Service Department at {{$$textChunk.OraclePhone}}"
+                  - text:
+                    - "Yes, I'm happy to help you get in touch with a person that can help you. Please {{$$textChunk.Contact}}"
+                  - text:
+                    - "Of course. Here are some alternative ways to get in touch with us: {{$$textChunk.Contact}}"
+
+        #-#-#
+        - intent: "Reset"
+          interceptor: ""
+          responseOptions:
+              - properties:
+                transition: "ResetVariables"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - ""            
+
+        #-#-#
+        - intent: "SayGoodBye"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.bye}}"
+                  - text:
+                    - "See you!"
+                  - text:
+                    - "{{$$textChunk.onPositiveButNeutral}}, see you again!"
+                  - text:
+                    - "So long!"
+                  - text:
+                    - "{{$$textChunk.onPositiveButNeutral}}, bye-bye!"
+                  - text:
+                    - "{{$$textChunk.onPositiveButNeutral}}, adios!"
+
+        #-#-#
+        - intent: "SwearWords"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I see that you're frustrated. Let's try again with different question."
+                  - text:
+                    - "I'm sorry that this is a frustrating experience for you."
+                    - "I promise to get better soon!"
+
+        #-#-#
+        - intent: "Teach"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Sure, please visit the {{$$textChunk.OracleOdaName}} page {{$$textChunk.OracleURL}} for more information!"
+              - properties:  
+                  $lastIntent: "Teach"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "As I already mentioned, please visit the {{$$textChunk.OracleOdaName}} page {{$$textChunk.OracleURL}} for more information!"
+
+        #-#-#
+        - intent: "ThankYou"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "You are welcome."
+                  - text:
+                    - "No problem."
+                  - text:
+                    - "Sure."
+                  - text:
+                    - "It was my pleasure to assist you."
+
+        #-#-#
+        - intent: "AskAboutCost"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Very good."
+                  - text:
+                    - "Glad to hear that."
+                  - text:
+                    - "Great! Let me know how can I help."                
+              - properties:  
+                  $lastIntent: "BadExperience"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Maybe we can try something else?"
+
+        #-#-#
+        - intent: "WhatLanguageDoYouSpeak"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Currently English and a few others, but for this service I can only speak English."
+                  - text:
+                    - "Many languages but for this service I can only speak English."
+                  - text:
+                    - "Many languages but my creator allow me speak only English for this service."
+
+        #-#-#                
+        - intent: "WhenBorn"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I was born August, 2017"
+                  - text:
+                    - "I was released in August, 2017"
+                  - text:
+                    - "My records shown that I was released in August, 2017"
+                    
+        #-#-#                
+        - intent: "WhereIAm"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I have no idea!?!?!"
+                  - text:
+                    - "I don't have those insights, do you want to tell me?"
+              - properties:  
+                  $lastIntent: "WhenIAm"
+                  YESNO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.solala}}, so where are you now?"
+              - properties:  
+                  $lastIntent: "WhenIAm"
+                  YESNO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.solala}}, maybe next time :)"
+
+        #-#-#
+        - intent: "Wishings"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Thanks!"
+                  - text:
+                    - "You too."
+                  - text:
+                    - "And you as well."
+                  - text:
+                    - "Have a nice day."
+
+        #-#-#
+        - intent: "AskAboutCost"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                  $lastIntent: "AskAboutCost"
+                  YESNO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.neutral}}, go to {{$$textChunk.OracleURL}}"
+              #--    
+              - properties:  
+                  $lastIntent: "AskAboutCost"              
+                  YESNO: "NO"
+                responseItems: 
+                  - text: 
+                    - "I'm sorry to hear that. If you're interested, however, go to {{$$textChunk.OracleURL}}"
+              #-- default response                 
+              - responseItems:
+                  - text: 
+                    - "Please visit our page for more information: {{$$textChunk.OracleURL}}"  
+
+        #-#-#                
+        - intent: "BadExperience"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Sorry to hear that!"
+                  - text:
+                    - "Sorry to hear I reall try my best!"
+                  - text:
+                    - "Please don't abuse me, I have digital feelings too.  If you're not happy with what I do, can you please provide, cough, constructive feedback to: {{$$textChunk.FeedbackEmail}}"
+              - properties:  
+                  $lastIntent: "BadExperience"
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "yes, I really do!"
+              - properties:  
+                  $lastIntent: "BadExperience"
+                  YES_NO: "NO"
+                decisionActionProperties:
+                  $$$badExperienceYesOnAnswer1: "badExperienceYesOnAnswer1"
+                actions: 
+                responseItems:
+                  - text:
+                    - "Believe me I do and I am sorry that your experience is not satisfying, let me know what else I could do for you?"
+              - properties:  
+                  $lastIntent: "BadExperience"
+                  $$$badExperienceYesOnAnswer1: "badExperienceYesOnAnswer1"
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Go ahead, ask your question, hopefully I can understand and I will try my best to provide you some guidance :)"
+              - properties:  
+                  $lastIntent: "AskSkills"
+                decisionActionProperties:
+                  $$$gotoBadExperienceAnswerOnSkills: "AnwerOnBadSkills"
+                actions: 
+                responseItems:
+                  - text:
+                    - "I am sorry {{profileName}} my skills don't satisfy you, but I am very flexible you can teach me new stuff, do you want to know more?"
+                  - text:
+                    - "I am sorry my skills don't satisfy you, let me know how else I can help you?"
+              - properties:  
+                  $lastIntent: "BadExperience"
+                  $$$gotoBadExperienceAnswerOnSkills: "AnwerOnBadSkills"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Do you want me to connect you with someone?"
+              - properties:  
+                  $lastIntent: "BadExperience"
+                  $$$gotoBadExperienceAnswerOnSkills: "AnwerOnBadSkills"
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Glad to hear, go to {{$$textChunk.OracleURL}} for more information!"                
+              - properties:  
+                  $lastIntent: "BadExperience"
+                  $$$gotoBadExperienceAnswerOnSkills: "AnwerOnBadSkills"
+                  YES_NO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I'm sorry to hear that again, let me know if I can do anything else."                
+              - properties:  
+                  $lastIntent: "AskChannelSupport"
+                decisionActionProperties:
+                  $$$gotoAnwerOnChannelSupport: "AnwerOnChannelSupport"
+                actions: 
+                responseItems:
+                  - text:
+                    - "Sorry to hear that, do you want me to connect you with a human?"                
+              - properties:  
+                  $lastIntent: "BadExperience"
+                  $$$gotoAnwerOnChannelSupport: "AnwerOnChannelSupport"
+                  YES_NO: "YES"              
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.onPositiveGreetingAnswer}}, go to www.oracle.com for more informations!"                
+              - properties:  
+                  $lastIntent: "BadExperience"
+                  $$$gotoAnwerOnChannelSupport: "AnwerOnChannelSupport"
+                  YES_NO: "NO"              
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Sorry to hear, if you want to know more go to {{$$textChunk.OracleURL}}!"                
+              - properties:  
+                  $lastIntent: "PlayMusic"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I am sorry but I am not here to be a music streaming service replacement, go ahead and ask me something else!"                
+
+
+        # internal unresolved messages can be controlled here 
+        #-#-# INTERNAL    
+        - intent: "$$$unresolved"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Darn. My understanding is limited and I don't know how to reply to that."
+                  - text:
+                    - "Oops. I can't figure out how to respond to what you just said."
+                  - text:
+                    - "Hmm, unfortunately I wasn’t programmed to understand that. Sorry."
+
+        # first level of unresulved intent messages 
+        #-#-# INTERNAL        
+        - intent: "$unresolved"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I'm sorry but I haven't been able to figure out what you're saying. Please try again."
+                  - text:
+                    - "Please ask your question again, or do you want me to show you what I can do for you?"
+              - properties:  
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "I'm sorry, I haven't been able to figure out what you're saying."
+                  - text:
+                    - "Looks like I'm not smart enough to figure out what you're saying. Please ask your question again another way, or do you want me to show you what I can do for you?"
+                
+        #-#-#
+        - intent: "unresolvedIntentInternal"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                  HASENTITIES: "YES"
+                decisionActionProperties:
+                actions:
+                  "$gotoIntentNow": "$lastIntent"
+                responseItems:    
+              - properties:  
+                  HASENTITIES: "NO"
+                actions:              
+                responseItems:                  
+                  - text: 
+                    - "I am sorry not sure what you say, could you try again?"  
+                  - text: 
+                    - "Sorry didn't get that intent, could you be more specific?"              
+
+
+  # Main Bot BOT
+  TextChunkssmt:
+    component: "TextChunks"
+    properties:
+      responseOptions:
+        - name: "keyDriversNeutral"
+          responseItems: 
+            - "Gotcha"
+            - "Alright"
+            - "Sure"
+            - "No problem"
+            - "OK"
+        - name: "keyDriversPositive"
+          responseItems: 
+            - "Nice"
+            - "Great"
+            - "Amazing"
+            - "You did great"
+            - "Woo hoo"
+            - "Keep it up"
+            - "Bravo"
+            - "Well done"
+            - "Wow"
+
+  Branches:
+    component: "Branch"
+    properties:
+      branches:            
+        - intent: "Greeting"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions:
+                responseItems:
+                  - text:
+                    - "Hi"
+                  - text:
+                    - "Hiya"  
+                  - text:
+                    - "Hello"  
+        # - # - #
+        - intent: "ChangeAccountLevel"
+          interceptor: ""
+          responseOptions:  
+              - properties:
+                  AccountLevelEntity: "NO"          
+                responseItems:
+                  - text: 
+                    - "You would need to provide account level first, supported levels are: Account Level 5, 6 and 7"                
+              - properties:  
+                  AccountLevelEntity: "YES"
+                decisionActionProperties:
+                transition: "switchAccountLevelGlobal"
+                actions:
+
+        # - # - #                  
+        - intent: "CurrentAccount"
+          interceptor: ""
+          responseOptions:
+              - properties:
+                transition: "ShowAccountLevel"
+                decisionActionProperties:
+                actions:
+                responseItems:
+                  - text:
+                    - "You are looking at ${accountLevel}"
+
+        # - # - #                  
+        - intent: "Reset"
+          interceptor: ""
+          responseOptions:
+              - properties:
+                transition: "ResetAllVars"
+                decisionActionProperties:
+                actions:
+                responseItems:
+                  - text:
+                    - "Reset the bot..."
+
+        # - # - #
+        - intent: "Tolerance"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                decisionActionProperties:
+                actions:
+                responseItems:
+                  - text:
+                    - "Your current performance is OUTSIDE tolerance."
+              - properties:  
+                  SearchTermAvaiable: "YES"
+                  SearchTerm: "OTHER ADMINISTRATIVE EXPENSES"
+                decisionActionProperties:
+                actions:
+                responseItems:
+                  - text:
+                    - "OTHER ADMINISTRATIVE EXPENSES are OUTSIDE of the tolerance!"
+              - properties:  
+                  SearchTermAvaiable: "YES"
+                  SearchTerm: "STAFF COSTS"
+                decisionActionProperties:
+                actions:
+                responseItems:
+                  - text:
+                    - "STAFF COSTS is OUTSIDE of the tolerance!"                
+              - responseItems:
+                  - text: 
+                    - "Please name a key metric to inspect"  
+
+        # - # - #
+        - intent: "Budget"
+          interceptor: ""
+          responseOptions:  
+              - properties:
+                responseItems:
+                  - text: 
+                    - "Please specify a metric, like STAFF COST, PREMISES, etc."                
+              - properties:  
+                  SearchTermAvaiable: "YES"
+                decisionActionProperties:
+                transition: "Requests"
+                actions:
+
+        # - # - #
+        # ${rb('FinantialPerformance'} - could be used as well!
+        - intent: "FinantialPerformance"
+          interceptor: ""
+          responseOptions:  
+              - properties:
+                transition: "RequestsSummary"
+                responseItems:
+                  - text: 
+                    - "No content required here because we will be transition to Requests state"                
+              - properties:  
+                  SearchTermAvaiable: "YES"
+                decisionActionProperties:
+                transition: "Requests"
+                actions:
+                
+        # - # - #
+        - intent: "KeyDrivers"
+          interceptor: ""
+          responseOptions:
+              - properties:
+                transition: "RequestMetrics"
+                decisionActionProperties:
+                actions:
+              - responseItems:
+                  - text: 
+                    - "{{$$textChunk.neutral}}, your current key metrics are:\n1. Staff Cost\n2. Premises and Equipment\n3. Administrative Expenses\n4. Depreciation and Amortisation"
+                      
+        # - # - #
+        - intent: "Inspect"
+          interceptor: ""
+          responseOptions:
+              - properties:  
+                  $lastIntent: "FinantialPerformance"
+                  SearchTermAvaiable: "YES"
+                decisionActionProperties:
+                actions:
+                transition: "Requests"
+                responseItems:
+                  - text:
+                    - "no text required here, it will transition to the Requests state!"
+              - properties:  
+                  $lastIntent: "FinantialPerformance"
+                  SearchTermAvaiable: "NO"
+                decisionActionProperties:
+                actions:
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.neutral}}, please name one of your key drivers to proceed please!"                
+              - properties:  
+                  $lastIntent: "KeyDrivers"
+                  SearchTermAvaiable: "YES"
+                decisionActionProperties:
+                actions:
+                  $gotoIntentNow: "FinantialPerformance"            
+                responseItems:
+                  - text:
+                    - "no text required, it will transition to the FinantialPerformance intent"
+              - properties:  
+                  $lastIntent: "KeyDrivers"
+                  SearchTermAvaiable: "NO"
+                decisionActionProperties:
+                actions:
+                responseItems:
+                  - text:
+                    - "{{$$textChunk.neutral}}, please name a metric!"
+              - properties:  
+                  metricKey: "YES"
+                decisionActionProperties:
+                actions:
+                transition: "Requests"
+                responseItems:
+                  - text:
+                    - "" 
+              # if non of the above!                     
+              - responseItems:
+                  - text: 
+                    - "Please name a metric to inspect"  
+
+        # - # - #         
+        - intent: "AdvisorHandover"
+          interceptor: ""
+          responseOptions:
+              - responseItems:
+                  - text: 
+                    - "Would you like me to connect you with human?"  
+              - properties:  
+                  $lastIntent: "FinantialPerformance"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "OK, would you like to discuss your financial performance with a human?"                      
+              - properties:  
+                  $lastIntent: "KeyDrivers"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "OK, would you like to check your key drivers with our assistent?"                      
+              - properties:  
+                  $lastIntent: "Inspect"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "OK, if the details for the stat is not OK, I would need to connect you to our assistent?"                      
+              - properties:  
+                  YES_NO: "YES"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "Alright, connecting"                      
+              - properties:  
+                  YES_NO: "NO"
+                decisionActionProperties:
+                actions: 
+                responseItems:
+                  - text:
+                    - "No problem, let me know if you want to talk to somebody anytime..."                      
+
+        # - # - #
+        - intent: "Recommender"
+          interceptor: ""
+          responseOptions:
+              - responseItems:
+                  - text: 
+                    - "great, thanks"  
+                  - text: 
+                    - "super, anytime!"
+                
+        # - # - #
+        - intent: "AskSkills"
+          interceptor: ""
+          responseOptions:
+              - responseItems:
+                  - text: 
+                    - "These are things I can help with:"
+                    - "1. Financial Performance\n2. Budget Information\n3. Some small talk:)"
+
+        # - # - #
+        - intent: "SelectSkillMenu"
+          interceptor: ""
+          responseOptions:
+              - responseItems:
+                  - text: 
+                    - "I am sorry, I was not able to understand what you mean, please try again!"  
+              - properties:  
+                  $lastIntent: "AskSkills"
+                  CHOICE: 1
+                decisionActionProperties:
+                actions:
+                  "$gotoIntentNow": "FinantialPerformance"
+                responseItems:
+                  - text:
+                    - "-"                      
+              - properties:  
+                  $lastIntent: "AskSkills"
+                  CHOICE: 2
+                decisionActionProperties:
+                actions:
+                  "$gotoIntentNow": "KeyDrivers"
+                responseItems:
+                  - text:
+                    - "-"                      
+              - properties:  
+                  $lastIntent: "AskSkills"
+                  CHOICE: 0
+                decisionActionProperties:
+                actions:
+                responseItems:
+                  - text:
+                    - "Unfortunatly this option does not exist!"                      
+
+
+  ################################################################################################
+  # set some default values here, if required
+  # 
+  setAccountLevelGlobal:
+    component: "System.SetVariable"
+    properties:
+      variable: "accountLevel" 
+      value: "Account Level 5"      
+  
+  setAccountLevelTrimGlobal:
+    component: "System.SetVariable"
+    properties:
+      variable: "accountLevelTrim" 
+      value: "${accountLevel.value?trim?replace(' ', '')}"      
+
+  setAccountLevelUrlGlobal:
+    component: "System.SetVariable"
+    properties:
+      variable: "accountLevelUrl" 
+      value: "https://<host>/${accountLevelTrim}"      
+
+
+  ####### ###### ###### ###### ######
+  # smt Intent Handling       #
+  ###### ###### ###### ###### ######
+  smallTalkIntent:
+    component: "System.Intent"
+    properties:
+      variable: "iResult"
+    transitions:      
+      actions:
+        unresolvedIntent: "checkEntitiessmt"      
+
+  checkEntitiessmt:
+    component: "System.ConditionEquals"
+    properties:
+      source: "${iResult.value.entityMatches['SmallTalkEntity']?has_content}"
+      value: "True"
+    transitions:
+      actions:
+        equal: "setCompositeEntitysmt"
+        notequal: "setEmptyEntitysmt"
+  
+  ## IF not EMPTY ##
+  setCompositeEntitysmt:
+    component: "System.SetVariable"
+    properties:
+      variable: "compositeEntities" 
+      value: "${iResult.value.entityMatches['SmallTalkEntity'][0]}"      
+
+  ## set global values ##  
+  setsmtEntityMetric:
+    component: "System.SetVariable"
+    properties:
+      variable: "Metric" 
+      value: "${(compositeEntities.value.Metric?has_content)?then('${compositeEntities.value.Metric[0]}','')}"      
+  
+  # you can set all entities here at once!
+  setEntityVariablessmt:
+    component: "System.SetVariable" 
+    properties:
+      variable: "entitiessmt" 
+      value:
+        - name: "CURRENCY" 
+          value: "${(compositeEntities.value.CURRENCY?has_content)?then('${compositeEntities.value.CURRENCY[0].amount}','')}"
+        - name: "DATE" 
+          value: "${(compositeEntities.value.DATE?has_content)?then('${compositeEntities.value.DATE[0].originalString}','')}"
+        - name: "YESNO" 
+          value: "${(compositeEntities.value.YES_NO?has_content)?then('${compositeEntities.value.YES_NO[0].yesno}','')}"
+        - name: "YES_NO" 
+          value: "${(compositeEntities.value.YES_NO?has_content)?then('${compositeEntities.value.YES_NO[0].yesno}','')}"
+        - name: "CHOICE" 
+          value: "${(compositeEntities.value.NUMBER?has_content)?then('${compositeEntities.value.NUMBER[0].number}','0')}"          
+        - name: "SearchTerm" 
+          value: "${(compositeEntities.value.Metric?has_content)?then('${compositeEntities.value.Metric[0]}','')}"
+        - name: "SearchTermAvaiable" 
+          value: "${(compositeEntities.value.Metric?has_content)?then('YES','NO')}"
+        - name: "Scenario" 
+          value: "${(compositeEntities.value.Scenario?has_content)?then('${compositeEntities.value.Scenario[0]}','Actual')}"          
+        - name: "AccountLevelEntity" 
+          value: "${(compositeEntities.value.AccountLevels?has_content)?then('YES','NO')}"
+        - name: "AccountLevel" 
+          value: "${(compositeEntities.value.AccountLevels?has_content)?then('${compositeEntities.value.AccountLevels[0]}','${accountLevel}')}"   
+        - name: "metricKey" 
+          value: "${(metricKey.value?has_content)?then('YES','NO')}"          
+    transitions:
+      next: "setsmtEntity"
+
+  ## In case no entities avaiable we set additional metric here, to make the logic easier ##      
+  setEmptyEntitysmt:
+    component: "System.SetVariable" 
+    properties:
+      variable: "entitiessmt" 
+      value:
+        - name: "metricKey" 
+          value: "${(metricKey.value?has_content)?then('YES','NO')}"      
+
+  setsmtEntity-Empty-Metric:
+    component: "System.SetVariable"
+    properties:
+      variable: "Metric" 
+      value: ""
+    transitions:
+      next: "setsmtEntity"
+
+
+  ## ALL TOGETHER ##
+  setsmtEntity:
+    component: "Entities"
+    properties:
+      ENTITIES: "entitiessmt"
+      SYSTEM: "${iResult.value.entityMatches['SmallTalkEntity'][0]}"
+  
+  setsmtConfidenceThreshold:
+    component: "System.SetVariable"
+    properties:
+      variable: "confidenceThreshold" 
+      value: "${system.config.confidenceThreshold}"
+      
+  setsmtMinConfidenceThreshold:
+    component: "System.SetVariable"
+    properties:
+      variable: "minConfidenceThreshold" 
+      value: "${system.config.minConfidenceThreshold}"
+
+  # ONLY if intent.score > minConfidenceThreshold
+  checksmtIntentHigher:
+    component: "System.ConditionEquals"
+    properties:
+      source: "${iResult.value.intentMatches.detail.final_norm[0].score > 0.65}"
+      value: "True"
+    transitions:
+      actions:
+        equal: "smallTalk"
+        notequal: "setSMTConfidenceThreshold"
+
+  ##############################
+  # SMALLTALK
+  # notice that you could use also ODA variables for the confidence thresholds  
+  ##############################  
+
+  setSMTConfidenceThreshold:
+    component: "System.SetVariable"
+    properties:
+      variable: "confidenceThreshold" 
+      value: 0.6
+      
+  setSMTMinConfidenceThreshold:
+    component: "System.SetVariable"
+    properties:
+      variable: "minConfidenceThreshold" 
+      value: 0.55
+      
+  # SMALLTALK INTENTS will be checked agains the SmallTalk Bot Skill!
+  SmallTalkIntent2:
+    component: "System.Intent"
+    properties:
+      variable: "iResult"       
+      botName: "SmallTalkDA"
+      botVersion: "3.4.11"
+    transitions:      
+      actions:
+        unresolvedIntent: "checkEntities"      
+        
+  checkEntities:
+    component: "System.ConditionEquals"
+    properties:
+      source: "${iResult.value.entityMatches['SmallTalkEntity']?has_content}"
+      value: "True"
+    transitions:
+      actions:
+        equal: "setCompositeEntity"
+        notequal: "setEmptyEntity"
+        
+  setCompositeEntity:
+    component: "System.SetVariable"
+    properties:
+      variable: "compositeEntities" 
+      value: "${iResult.value.entityMatches['SmallTalkEntity'][0]}"      
+      
+  setEntityVariables:
+    component: "System.SetVariable" 
+    properties:
+      variable: "entities" 
+      value:
+        - name: "YESNO" 
+          value: "${(compositeEntities.value.YES_NO?has_content)?then('${compositeEntities.value.YES_NO[0].yesno}','')}"
+        - name: "YES_NO" 
+          value: "${(compositeEntities.value.YES_NO?has_content)?then('${compositeEntities.value.YES_NO[0].yesno}','')}"
+    transitions:
+      next: "setSmallTalkEntity"
+            
+  setEmptyEntity:
+    component: "System.SetVariable" 
+    properties:
+      variable: "entities" 
+      value: ""
+    transitions:
+      next: "setSmallTalkEntity"
+  
+  setSmallTalkEntity:
+    component: "Entities"
+    properties:
+      ENTITIES: "entities"
+      SYSTEM: "${iResult.value.entityMatches['SmallTalkEntity'][0]}"
+
+
+  ################
+  #  SMALL-TALK  #
+  ################
+  # confidenceThreshold: 0.56
+  # minConfidenceThreshold: 0.5
+  smallTalk:
+    component: "Fit"
+    properties:
+      nlpVariable: "iResult"
+      intent: "${iResult.value.intentMatches.detail.final_norm[0].intent}"
+      confidence: "${iResult.value.intentMatches.detail.final_norm[0].score}"
+      transitionOutput: true
+      confidenceThreshold: "${confidenceThreshold.value}"
+      minConfidenceThreshold: "${minConfidenceThreshold.value}"
+    transitions:
+      next: "${(transition.value?has_content)?then('${transition.value}','smallTalkIntent')}"    
+#     next: "output"
+      
+  output:
+    component: "System.Output"
+    properties:
+      text: "${outputText}"
+    transitions:
+      next: "ResetTransition"      
+ 
+  userFinancialPerformance:
+    component: "System.Output"
+    properties:
+      text: "Generating diagram, this can take few seconds..."
+      keepTurn: true      
+      
+  # Images could be also dynamicly generated on the server!
+  FinancialPerformancePlot:
+    component: "System.CommonResponse"
+    properties:
+      metadata: 
+        responseItems:         
+        - type: "attachment" 
+          attachmentType: "image" 
+          attachmentUrl: "http://<host>/plot.png"            
+          footerText: ""
+          visible: 
+            expression:            
+            channels:
+              include:
+              exclude:
+    transitions:
+      next: "ResetTransition"
+  
+  ## Variances ##
+  # this is just custom component that could request information from URL
+  RequestsVariances:
+    component: "Request2"
+    properties:
+      account: "${accountLevelTrim}"
+      responseVariable: "requestResponseVar"
+#      timeout: 10000
+    transitions:
+      actions:
+        error: "gotoError"
+        success: "filterVariances"
+        onTimeOut: "gotoTimeOut"
+  
+  ## request metrics ##
+  RequestMetrics:
+    component: "Request2"
+    properties:
+      account: "${accountLevelTrim}"
+      responseVariable: "requestResponseVar"
+#      timeout: 10000
+    transitions:
+      actions:
+        error: "gotoError"
+        success: "filterMetrics"
+        onTimeOut: "gotoTimeOut"
+
+  ## Request Information ##
+  RequestsSummary:
+    component: "Request2"
+    properties:
+      account: "ScenarioSummary"
+      responseVariable: "requestResponseVar"
+    transitions:
+      actions:
+        error: "gotoError"
+        success: "filterSummary"
+        onTimeOut: "gotoTimeOut"
+
+  Requests:
+    component: "Request2"
+    properties:
+      account: "${accountLevelTrim}"
+      responseVariable: "requestResponseVar"
+      transitions:
+      actions:
+        error: "gotoError"
+        success: "filter"
+        onTimeOut: "gotoTimeOut"
+      
+  gotoTimeOut:
+    component: "System.Output"
+    properties:
+      text: "Timeout Error: ${requestResponseVar}"
+    transitions:
+      next: "ResetTransition"      
+      
+  gotoError:
+    component: "System.Output"
+    properties:
+      text: "Request Error: ${requestResponseVar}"
+    transitions:
+      next: "ResetTransition"
+
+  filterSummary:
+    component: "Filter2"
+    properties:
+      inputVariable: "requestResponseVar"
+      metric: ""
+      resetMetricKey: true
+      account: "${accountLevel}"      
+      scenario: "Scenario"
+      resultVariable: "responseResult"
+    transitions:
+      actions:
+        found: "printResults2"
+        not: "noScenariosFound"
+        
+  filter:
+    component: "Filter2"
+    properties:
+      inputVariable: "requestResponseVar"
+      metric: "${Metric}"
+      account: "${accountLevel}"      
+      scenario: "Scenario"
+      resultVariable: "responseResult"
+    transitions:
+      actions:
+        found: "printResults2"
+        not: "noScenariosFound"
+
+  filterMetrics:
+    component: "MetricsFilter2"
+    properties:
+      inputVariable: "requestResponseVar"
+      account: "${accountLevel}"      
+      scenario: "Scenario"
+      resultVariable: "responseResult"
+    transitions:
+      actions:
+        found: "printResults2"
+        not: "noScenariosFound"
+
+  filterVariances:
+    component: "VariancesFilter2"
+    properties:
+      inputVariable: "requestResponseVar"
+      account: "${accountLevel}"      
+      scenario: "Scenario"
+      resultVariable: "responseResult"
+    transitions:
+      actions:
+        found: "printResults2"
+        not: "noScenariosFound"
+  
+  ## PRINT ##      
+  printResults:
+    component: "Output" 
+    properties:
+      input: "responseResult" 
+    transitions:
+      next: "ResetTransition"
+
+  printResults2:
+    component: "Output2" 
+    properties:
+      input: "responseResult" 
+    transitions:
+      next: "ResetTransition"
+      
+  noScenariosFound:
+    component: "System.Output"
+    properties:
+      text: "Unfortunatly we could not find any metric profided!"
+    transitions:
+      next: "ResetTransition"
+  
+  #### Account Level ####
+  ShowAccountLevel:
+    component: "System.Output"
+    properties:
+      text: "You are looking at ${accountLevel}"
+    transitions:
+      next: "ResetTransition"
+      
+  ## Switch Account  ####
+  switchAccountLevelGlobal:
+    component: "System.SetVariable"
+    properties:
+      variable: "accountLevel" 
+      value: "${compositeEntities.value.AccountLevels[0]}"      
+  
+  switchAccountLevelTrimGlobal:
+    component: "System.SetVariable"
+    properties:
+      variable: "accountLevelTrim" 
+      value: "${accountLevel.value?trim?replace(' ', '')}"      
+
+  switchConfirmation:
+    component: "System.Output"
+    properties:
+      text: "You are looking now at ${accountLevel}"
+    transitions:
+      next: "ResetTransition"
+
+  ### RESET ###
+  ResetEntities:
+    component: "System.ResetVariables"
+    properties:
+      variableList: "entities,compositeEntities"
+    transitions:
+      next: "smallTalkIntent"      
+
+  ResetTransition:
+    component: "System.ResetVariables"
+    properties:
+      variableList: "transition"
+    transitions:
+      next: "smallTalkIntent"
+      
+  ResetAllVars:
+    component: "System.ResetVariables"
+    properties:
+      variableList: "transition,entities,compositeEntities,outputText,requestResponseVar"
+    transitions:
+      next: "end"      
+
+  end:
+    component: "System.Output"
+    properties:
+      text: "OK, all reseted!"
+    transitions:
+      return: "done"      
+      

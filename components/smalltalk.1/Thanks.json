@@ -1,0 +1,31 @@
+{
+    "ThankYou": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "You are welcome."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "No problem"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Sure"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "You're welcome"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

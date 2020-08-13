@@ -1,0 +1,28 @@
+{
+    "Teach": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Sure, please visit the Oracle Digital Assistent page for more information!"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "Teach"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "As already mention, please visit the Oracle Digital Assistent Page for more information!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

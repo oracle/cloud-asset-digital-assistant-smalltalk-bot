@@ -1,0 +1,42 @@
+{
+    "AskAboutCost2": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "I am part of the Oracle Mobile Cloud Enterprise offering. Do you want to know more?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskAboutCost",
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.neutral}}, go to https://www.oracle.com/en/solutions/mobile/bots.html"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskAboutCost",
+                    "YES_NO": "NO"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "I'm sorry to hear that. If you're interested, however, go to https://www.oracle.com/en/solutions/mobile/bots.html"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "FavoriteMusic": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "lately a lot of heavy metal"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "currently try to run some AC/DC here in the data center:)"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "last album from Metallica was awesome"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "FavoriteMusic",
+                    "YES_NO": "YES"
+                },
+                "actions": {
+                    "$$$gotoDoYouLikeRockMusicAnswer": "DoYouLikeRockMusicAnswer"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "cool, you like rock music to, what?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "FavoriteMusic",
+                    "YES_NO": "NO"
+                },
+                "actions": {
+                    "$$$gotoWhatMusicDoYouLike": "WhatMusicDoYouLike"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "sorry to hear, what music do you like?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "FavoriteMusic",
+                    "$$$gotoDoYouLikeRockMusicAnswer": "DoYouLikeRockMusicAnswer",
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "great, we could go to a party together when I get out of here:)"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "FavoriteMusic",
+                    "$$$gotoDoYouLikeRockMusicAnswer": "DoYouLikeRockMusicAnswer",
+                    "YES_NO": "NO"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "hmm, sorry to hear:("
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

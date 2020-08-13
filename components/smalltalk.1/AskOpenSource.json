@@ -1,0 +1,21 @@
+{
+    "AskOpenSource": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "We use well known and proven open source technologies such as Spark, Kafka and Hadoop."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Spark, Kafka, Hadoop and some Oracle secret source:)"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

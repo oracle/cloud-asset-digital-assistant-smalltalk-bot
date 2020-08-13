@@ -1,0 +1,36 @@
+{
+  "$unresolved": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "I am sorry, I haven't been able to recognise your intention?"
+            ]
+          },
+          {
+            "text": [
+              "Please ask your question again, or do you want me to show you what I can do for you?"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {"intent": "unresolved"},
+        "replays": [
+          {
+            "text": [
+              "I am sorry, I haven't been able to recognise your intent?"
+            ]
+          },
+          {
+            "text": [
+              "Looks like I am not smart enough, I can't recognise your intention, please ask your question again, or do you want me to show you what I can do for you?"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

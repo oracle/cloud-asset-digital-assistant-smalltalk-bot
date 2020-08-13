@@ -1,0 +1,38 @@
+{
+  "$unresolved": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "I'm sorry but I haven't been able to figure out what you're saying. Please try again."
+            ]
+          },
+          {
+            "text": [
+              "Please ask your question again, or do you want me to show you what I can do for you?"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "YES_NO": "YES"
+        },
+        "replays": [
+          {
+            "text": [
+              "I'm sorry, I haven't been able to figure out what you're saying."
+            ]
+          },
+          {
+            "text": [
+              "Looks like I'm not smart enough. I can't figure out what you're saying. Please ask your question again, or do you want me to show you what I can do for you?"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

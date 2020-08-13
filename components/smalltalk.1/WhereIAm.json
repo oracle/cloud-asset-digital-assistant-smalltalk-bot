@@ -1,0 +1,47 @@
+{
+    "WhereIAm": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Have no idea!?!?!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Don't have those insights, do you want to tell me?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "WhenIAm",
+                    "YES_NO": "YES"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.solala}}, so where are you now?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "WhenIAm",
+                    "YES_NO": "NO"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "{{$$textChunk.solala}}, maybe next time:)"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

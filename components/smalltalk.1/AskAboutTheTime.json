@@ -1,0 +1,46 @@
+{
+    "AskAboutTheTime": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "let me check",
+                            "my time now is {{timeNow}}"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "{{timeNow}}"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "AskAboutTheDay": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "here at my place right now is {{dateNow}}"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "{{dateNow}}"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "my api tells me that it is {{dateNow}}"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "AskFeelingNegative": {
+        "properties": {},
+        "dialogs": [
+            {
+                "actions": {
+                    "$gotoIntentNow": "AskFeelings"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "Feeling good and helpful."
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

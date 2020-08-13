@@ -1,0 +1,31 @@
+{
+    "AskHelp": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Sure ask you question, I hope I can help"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "just as a question!"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "well I hope I can help, just ask"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "ask a question and if I understand it, I would let you know:)"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

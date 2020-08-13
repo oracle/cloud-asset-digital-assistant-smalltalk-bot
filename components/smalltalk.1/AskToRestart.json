@@ -1,0 +1,110 @@
+{
+  "AskToRestart": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "Do you want me to connect you with someone else?"
+            ]
+          },
+          {
+            "text": [
+              "I'm just a bot program. Do you want me to connect you with a human?"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "YES_NO": "YES"
+        },
+        "replays": [
+          {
+            "text": [
+              "Ok, I wanted to switch to a human agent right now, but realise that this was not implemented for this bot:("
+            ]
+          },
+          {
+            "text": [
+              "{{$$textChunk.apologyMedium}}, but as I mention is not going to work, it was not implemented for this bot, you need to contact someone form Oracle to help you",
+              "sorry about that!"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "YES_NO": "NO"
+        },
+        "actions": {
+          "$$$gotoAskMeSomethingElse": "AskMeSomethingElse"
+        },
+        "replays": [
+          {
+            "text": [
+              "Ok, maybe you want to ask me something else?"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "YES_NO": "YES",
+          "$$$gotoAskMeSomethingElse": "AskMeSomethingElse"
+        },
+        "replays": [
+          {
+            "text": [
+              "{{$$textChunk.onPositiveButNeutral}}, go ahead!"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "YES_NO": "NO",
+          "$$$gotoAskMeSomethingElse": "AskMeSomethingElse"
+        },
+        "replays": [
+          {
+            "text": [
+              "as you wish!"
+            ]
+          },
+          {
+            "text": [
+              "{{$$textChunk.solala}}, is up to you!"
+            ]
+          },
+          {
+            "text": [
+              "alright, let me know"
+            ]
+          }
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "I am sorry, I understand your greeting intention but my creators didn't teach me how to answer."
+              ]
+            },
+            {
+              "text": [
+                "Darn, I understand your greeting intention but have no answer. Will you please try to ask the question again?"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

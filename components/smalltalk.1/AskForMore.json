@@ -1,0 +1,70 @@
+{
+    "AskForMore": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Well, you would need to ask me something first :)"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Please ask me a question first :)"
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Tell me what you're trying to do, please?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskForMore"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "Well I did that already!"
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskSkills"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "Sure, just go to www.oracle.com  and look for the digital assistent for more information."
+                        ]
+                    }
+                ]
+            }
+        ],
+        "unresolved": {
+            "properties": {},
+            "dialogs": [
+                {
+                    "properties": {},
+                    "replays": [
+                        {
+                            "text": [
+                                "For more information I would recommend to visit the www.oracle.com page!"
+                            ]
+                        },
+                        {
+                            "text": [
+                                "Sure, visit www.google.com page!"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

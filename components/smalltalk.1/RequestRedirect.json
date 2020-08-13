@@ -1,0 +1,46 @@
+{
+  "RequestingRedirection": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "I’m sorry that I couldn’t help you. Please call our Customer Service Department at 1-800-XXX-XXXX"
+            ]
+          },
+          {
+            "text": [
+              "Yes, I’m happy to help you get in touch with a person that can help you. Please {call/email/write/web instructions}"
+            ]
+          },
+          {
+            "text": [
+              "Of course. Here are some alternative ways to get in touch with us: {call/email/write/web instructions}"
+            ]
+          }          
+        ]
+      }
+    ],
+    "unresolved": {
+      "properties": {},
+      "dialogs": [
+        {
+          "properties": {},
+          "replays": [
+            {
+              "text": [
+                "I'm sorry. I understand your greeting intention but I wasn't taught how to answer."
+              ]
+            },
+            {
+              "text": [
+                "Darn, I understand your greeting intention but have no answer. Will you please try to ask the question again?"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

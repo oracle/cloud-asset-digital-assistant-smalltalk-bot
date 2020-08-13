@@ -1,0 +1,57 @@
+{
+  "DateSpecificGreetings": {
+    "properties": {},
+    "dialogs": [
+      {
+        "replays": [
+          {
+            "text": [
+              "Thank you – you too!"
+            ]
+          },
+          {
+            "text": [
+              "And to you too!"
+            ]
+          },
+          {
+            "text": [
+              "And to you as well!"
+            ]
+          },
+          {
+            "text": [
+              "happy {{entity}} to you as well!"
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "wrongdate": true,
+          "diff": "positive"
+        },
+        "replays": [
+          {
+            "text": [
+              "Yeah, it's not {{entity}} yet. We still have {{days}} days to go."
+            ]
+          }
+        ]
+      },
+      {
+        "properties": {
+          "wrongdate": true,
+          "diff": "negative"
+        },
+        "replays": [
+          {
+            "text": [
+              "It doesn't look like it's {{entity}} right now. That was {{days}} days ago!"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

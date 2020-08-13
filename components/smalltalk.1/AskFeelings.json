@@ -1,0 +1,38 @@
+{
+    "AskFeelings": {
+        "properties": {},
+        "dialogs": [
+            {
+                "replays": [
+                    {
+                        "text": [
+                            "Feeling good and helpful."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "Feeling really good and helpful."
+                        ]
+                    },
+                    {
+                        "text": [
+                            "I've never been better and am at your service."
+                        ]
+                    }
+                ]
+            },
+            {
+                "properties": {
+                    "$lastIntent": "AskConfidence"
+                },
+                "replays": [
+                    {
+                        "text": [
+                            "Yes, I am sure I feel great, thanks!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
