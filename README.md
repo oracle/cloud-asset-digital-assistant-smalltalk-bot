@@ -2,6 +2,9 @@
 
 Copyright (c) 2020, Oracle and/or its affiliates.
 
+| :exclamation:  We NO longer support this project, for SmallTalk capabilities please refer to Oracle Digital Assistant Team   |
+|------------------------------------------------------------------------------------------------------------------------------|
+
 ## Prerequisites
 
 * To run the SmallTalk Bot you would require Oracle Digital Assistant version 19.+
