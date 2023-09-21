@@ -14,7 +14,7 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "log4js": "^6.4.0",
-    "moment": "^2.29.2",
+    "moment": "^2.29.4",
     "mustache": "^2.3.2",
     "express": "^4.16.3"
   },
